@@ -39,3 +39,15 @@ Riassunti sviluppati a partire dal sommario del testo *Fisica sperimentale. Mecc
 | 24 | Elettromagnetismo | [24-elettromagnetismo.md](24-elettromagnetismo.md) | 3 |
 
 Totale: 24 capitoli, 99 argomenti.
+
+## Stato del lavoro
+
+Completato: 24 capitoli, 99 argomenti, circa 178.000 parole. Ogni argomento supera le 1000 parole di sola prosa (formule escluse).
+
+**Versione unica Word**: [Fisica-sperimentale-riassunti.docx](Fisica-sperimentale-riassunti.docx) raccoglie tutti i capitoli con indice e formule convertite in equazioni Word.
+
+## Scelte editoriali
+
+- Dove il sommario non elenca sottosezioni (es. 4.1, 4.3, 17.3, 17.4, 18.2, 18.4, 21.3, 23.4, 24.2, 24.3) i sottocapitoli sono stati definiti in modo coerente con l'argomento.
+- 6.3 *Principi di relatività*: "semplici / speciali / generali" sono interpretati come relatività galileiana, relatività speciale e principio di equivalenza (relatività generale).
+- Primo principio della termodinamica: convenzione $\Delta U = Q - W$, con $W$ lavoro compiuto dal sistema.

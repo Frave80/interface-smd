@@ -105,3 +105,75 @@ Entrambi i campi sono ampiamente sotto la rigidità dielettrica dell'aria, quind
 - La pressione elettrostatica $p = \sigma^2/(2\varepsilon_0) = \frac12\varepsilon_0E^2$ è sempre uscente.
 - In un campo esterno, le cariche indotte annullano il campo interno e deformano le linee di campo, che arrivano perpendicolari alla superficie.
 - Conduttori a contatto raggiungono lo stesso potenziale; il collegamento a terra fissa il potenziale a zero.
+
+## 17.2 Conduttore cavo
+
+Un **conduttore cavo** è un corpo conduttore che racchiude al suo interno una o più cavità vuote (o riempite di materiale isolante), completamente circondate dal materiale conduttore. Lo studio di questa configurazione porta a uno dei risultati più importanti e applicativi dell'elettrostatica: lo **schermo elettrostatico**, cioè la possibilità di isolare completamente una regione di spazio dai campi elettrici esterni, e viceversa di confinare i campi prodotti all'interno. Il principio, scoperto sperimentalmente da Faraday con la celebre "gabbia" in cui si chiuse mentre l'esterno veniva caricato ad alta tensione, è alla base di numerosissime applicazioni: cavi coassiali, involucri metallici dei dispositivi elettronici, cabine di misura schermate, protezione degli occupanti di automobili e aerei colpiti da fulmini.
+
+### 17.2.1 Conduttore carico
+
+Consideriamo un conduttore cavo, carico con carica $Q$, all'interno della cui cavità **non ci sono cariche**. Ci chiediamo dove si trovi la carica e quale sia il campo nella cavità.
+
+Prendiamo una superficie gaussiana interamente contenuta nel materiale conduttore che circondi la cavità. Su di essa il campo è nullo, quindi il flusso è nullo e la carica totale racchiusa è nulla. Poiché nella cavità non ci sono cariche, la carica totale sulla **superficie interna** del conduttore (quella che delimita la cavità) è zero. Questo però non basta a escludere che sulla superficie interna ci siano zone di carica positiva e zone di carica negativa con somma nulla. Per escluderlo si usa la conservatività: se esistessero tali zone, ci sarebbero linee di campo che partono dalle cariche positive della parete interna, attraversano la cavità e terminano sulle cariche negative della stessa parete. Calcoliamo la circuitazione del campo lungo un percorso chiuso che segue una di queste linee nella cavità e si richiude attraverso il materiale conduttore: il contributo nel conduttore è nullo (campo nullo), quello lungo la linea di campo è strettamente positivo (il campo è parallelo allo spostamento). La circuitazione sarebbe quindi diversa da zero, contro la conservatività del campo elettrostatico. Equivalentemente, la linea partirebbe e arriverebbe su punti dello stesso conduttore, quindi allo stesso potenziale, ma lungo una linea di campo il potenziale decresce strettamente.
+
+Si conclude che, in assenza di cariche nella cavità:
+
+- la **densità di carica sulla superficie interna è nulla ovunque**;
+- il **campo nella cavità è nullo** e il potenziale nella cavità è costante e uguale a quello del conduttore;
+- tutta la carica $Q$ si trova sulla **superficie esterna**.
+
+Dal punto di vista matematico il risultato discende anche dal teorema di unicità: nella cavità il potenziale soddisfa l'equazione di Laplace con condizione al contorno $V = V_0$ costante sulla parete; la funzione costante $V = V_0$ è una soluzione, e per l'unicità è l'unica. In particolare il campo nella cavità è nullo indipendentemente dalla forma della cavità e del conduttore.
+
+Questo risultato ha una verifica sperimentale classica, l'**esperimento del pozzo di ghiaccio** di Faraday e la cosiddetta prova del cilindro di Faraday: toccando con una sferetta di prova la parete interna di un recipiente metallico carico, la sferetta non preleva carica; toccando la parete esterna, sì. Viceversa, inserendo una sferetta carica in un contenitore metallico e toccando la parete interna, la sferetta cede completamente la sua carica al contenitore, qualunque sia la carica già presente su quest'ultimo: è il principio del **generatore di Van de Graaff**, in cui un nastro isolante porta continuamente carica all'interno di una grande sfera cava, dove viene trasferita alla sfera stessa raggiungendo potenziali di milioni di volt. È anche il motivo per cui, come già notato nella sezione 16.4, la verifica del campo nullo all'interno di un conduttore cavo carico costituisce un test di altissima precisione della legge dell'inverso del quadrato.
+
+### 17.2.2 Carica nella cavità
+
+Supponiamo ora che nella cavità sia presente una carica $q$, isolata dalle pareti, e che il conduttore abbia una carica propria $Q$. Una superficie gaussiana nel materiale conduttore che racchiuda la cavità ha flusso nullo, quindi la carica totale racchiusa è nulla: sulla superficie interna deve trovarsi una carica indotta
+
+$$q_{\text{int}} = -q.$$
+
+La carica $-q$ si distribuisce sulla parete della cavità in modo da annullare, nel materiale conduttore e nello spazio esterno, il campo prodotto da $q$; la distribuzione dipende dalla posizione di $q$ nella cavità e dalla forma di quest'ultima. Le linee di campo partono da $q$ e terminano tutte sulla parete interna: è l'**induzione completa**, così detta perché tutte le linee di campo uscenti dalla carica inducente terminano sul conduttore indotto. Per la conservazione della carica, sulla superficie esterna si trova la carica
+
+$$q_{\text{est}} = Q+q.$$
+
+L'aspetto più notevole è che la distribuzione della carica sulla **superficie esterna non dipende dalla posizione di $q$ all'interno** della cavità. Il campo esterno è determinato dalla carica $Q+q$ e dalla forma della superficie esterna (e dalle eventuali cariche esterne), ma non da ciò che accade dentro: spostando la carica nella cavità, la distribuzione interna cambia, quella esterna no. Questo si dimostra ancora una volta con il teorema di unicità applicato alla regione esterna: il potenziale soddisfa l'equazione di Laplace, è nullo all'infinito, è costante sulla superficie esterna del conduttore e il flusso attraverso di essa è fissato dalla carica $Q+q$; tali condizioni determinano univocamente la soluzione.
+
+Un'importante conseguenza riguarda il collegamento a terra. Se il conduttore cavo è collegato a terra, il suo potenziale è nullo e la carica sulla superficie esterna, in assenza di cariche esterne, è nulla: tutto il campo prodotto da $q$ resta confinato all'interno della cavità. Il conduttore cavo collegato a terra realizza dunque uno **schermo perfetto verso l'esterno**: dall'esterno è impossibile rilevare con misure elettrostatiche la presenza e la posizione delle cariche interne. È così che si progettano gli involucri metallici di apparecchiature che generano campi elettrici intensi, per evitare di disturbare dispositivi vicini. Si noti che, se il conduttore non fosse collegato a terra, la carica $Q+q$ sulla superficie esterna segnalerebbe all'esterno la presenza della carica interna, pur nascondendone la posizione.
+
+### 17.2.3 Conduttore in campo esterno
+
+Consideriamo infine un conduttore cavo, senza cariche nella cavità, immerso in un campo esterno prodotto da cariche lontane. Come nel caso del conduttore pieno, sulla superficie esterna compaiono cariche indotte che annullano il campo nel materiale conduttore. Ma anche nella cavità il campo è nullo: il ragionamento della sottosezione 17.2.1 non dipende in alcun modo da ciò che accade all'esterno, perché utilizza solo il fatto che la parete della cavità sia equipotenziale e che nella cavità non vi siano cariche. Dunque:
+
+$$\vec{E} = 0\ \text{nella cavità, qualunque sia il campo esterno}.$$
+
+Il conduttore cavo protegge la cavità da qualsiasi campo elettrostatico esterno: questo è lo **schermo elettrostatico** o **gabbia di Faraday**. Le cariche indotte sulla superficie esterna si distribuiscono esattamente in modo da annullare all'interno del conduttore, e quindi anche della cavità, il contributo delle cariche esterne. Combinando con il risultato precedente, si ottiene un disaccoppiamento completo: un conduttore cavo collegato a terra separa lo spazio in due regioni elettrostaticamente indipendenti, in cui le cariche dell'una non producono effetti nell'altra.
+
+Nella pratica non occorre che lo schermo sia un involucro continuo: anche una rete metallica a maglie fitte funziona bene, purché le dimensioni delle maglie siano piccole rispetto alla distanza dalle regioni da proteggere. I campi che "penetrano" attraverso le aperture decadono rapidamente, su distanze dell'ordine della dimensione della maglia. Per questo la carrozzeria di un'automobile o la fusoliera di un aereo proteggono efficacemente gli occupanti dai fulmini: la scarica percorre l'involucro metallico esterno senza produrre campi significativi all'interno. La stessa idea è usata nei forni a microonde, dove la griglia metallica sulla porta ha fori di pochi millimetri, molto più piccoli della lunghezza d'onda di circa 12 cm, e impedisce alla radiazione di uscire. Va sottolineato che, per campi variabili nel tempo, l'efficacia dello schermo dipende anche dalla frequenza e dalla conducibilità del materiale (effetto pelle), argomento che esula dall'elettrostatica.
+
+Un'applicazione fondamentale in ingegneria è il **cavo coassiale**, costituito da un conduttore centrale circondato da una calza metallica collegata a terra, separati da un isolante. La calza schermante impedisce che campi esterni disturbino il segnale trasportato dal conduttore interno e, simmetricamente, che il segnale irradi verso l'esterno. Allo stesso modo i circuiti di misura sensibili (per esempio gli amplificatori per elettrodi biomedici) vengono racchiusi in contenitori metallici, e le misure di precisione si effettuano in stanze schermate. Anche il nostro corpo, toccando lo schermo di un dispositivo collegato a terra, non ne altera il funzionamento interno.
+
+### Esercizio d'esempio
+
+Un guscio sferico conduttore ha raggio interno $a = 4{,}0$ cm e raggio esterno $b = 5{,}0$ cm e porta una carica propria $Q = +6{,}0$ nC. Al centro della cavità è posta una carica puntiforme $q = -2{,}0$ nC. Determinare le cariche sulle due superfici del guscio, il campo a $r = 2{,}0$ cm, $r = 4{,}5$ cm e $r = 10$ cm, e il potenziale del guscio.
+
+**Soluzione.** Superficie interna: $q_{\text{int}} = -q = +2{,}0$ nC. Superficie esterna: $q_{\text{est}} = Q+q = 6{,}0-2{,}0 = +4{,}0$ nC. Per simmetria entrambe sono distribuite uniformemente.
+
+- $r = 2{,}0$ cm (cavità): racchiusa solo $q$. $E = k|q|/r^2 = 8{,}99\times10^9\cdot2{,}0\times10^{-9}/(0{,}020)^2 \approx 4{,}5\times10^{4}$ N/C, diretto verso il centro (carica negativa).
+- $r = 4{,}5$ cm (nel metallo): $E = 0$. Verifica: carica racchiusa $q+q_{\text{int}} = 0$.
+- $r = 10$ cm: racchiusa $q+Q = 4{,}0$ nC. $E = 8{,}99\times10^9\cdot4{,}0\times10^{-9}/(0{,}10)^2 \approx 3{,}6\times10^{3}$ N/C, uscente.
+
+Potenziale del guscio (uguale a quello della superficie esterna, che all'esterno si comporta come una carica puntiforme di $4{,}0$ nC):
+
+$$V = \frac{q+Q}{4\pi\varepsilon_0b} = 8{,}99\times10^9\cdot\frac{4{,}0\times10^{-9}}{0{,}050} \approx 7{,}2\times10^{2}\ \text{V}.$$
+
+Se si spostasse la carica $q$ fuori dal centro, la distribuzione interna cambierebbe, ma i risultati per $r>b$ e il potenziale del guscio resterebbero identici.
+
+### Punti chiave
+
+- In un conduttore cavo senza cariche nella cavità, il campo nella cavità è nullo e la superficie interna è scarica.
+- Tutta la carica propria di un conduttore cavo, in assenza di cariche interne, risiede sulla superficie esterna.
+- Con una carica $q$ nella cavità, sulla parete interna si induce $-q$ (induzione completa) e sulla superficie esterna compare $Q+q$.
+- La distribuzione sulla superficie esterna non dipende dalla posizione delle cariche nella cavità.
+- Il conduttore cavo collegato a terra isola completamente le due regioni: schermo elettrostatico (gabbia di Faraday).
+- Una rete metallica a maglie fitte scherma lo spazio interno quasi come un involucro continuo.
+- Applicazioni: cavo coassiale, involucri di strumenti, generatore di Van de Graaff, protezione da fulmini.

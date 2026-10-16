@@ -77,3 +77,93 @@ identico. Anche $\vec{E}'\cdot\vec{B}'=0$, come $\vec{E}\cdot\vec{B}=0$ in $S$.
 - I campi si trasformano con $\vec{E}'_\perp=\gamma(\vec{E}+\vec{v}\times\vec{B})_\perp$ e $\vec{B}'_\perp=\gamma(\vec{B}-\vec{v}\times\vec{E}/c^2)_\perp$; $\vec{E}\cdot\vec{B}$ e $E^2-c^2B^2$ sono invarianti.
 - Le equazioni di Maxwell sono intrinsecamente relativistiche.
 
+## 24.2 Equazioni di Maxwell
+
+### 24.2.1 Legge di Faraday-Neumann-Lenz
+
+Dopo la scoperta di Ørsted che le correnti producono campi magnetici, era naturale chiedersi se valesse anche il viceversa, cioè se un campo magnetico potesse produrre una corrente. Nel 1831 Faraday scoprì che ciò avviene, ma solo quando il campo magnetico **varia**. Avvicinando o allontanando una calamita da una bobina collegata a un galvanometro, si osserva una corrente che dura finché il moto continua e cambia verso quando il moto si inverte; lo stesso effetto si ottiene accendendo o spegnendo la corrente in una seconda bobina vicina, oppure deformando o ruotando il circuito in un campo costante. In tutti i casi il fattore comune è la variazione del **flusso magnetico concatenato** con il circuito, $\Phi_B=\int_S\vec{B}\cdot\hat{n}\,\mathrm{d}S$, che grazie al teorema di Gauss magnetico dipende solo dal circuito e non dalla superficie scelta.
+
+La formulazione quantitativa, dovuta a Faraday e Neumann, è la **legge di Faraday-Neumann-Lenz**: in un circuito chiuso si induce una **forza elettromotrice** pari all'opposto della derivata temporale del flusso concatenato,
+
+$$\mathcal{E} = -\frac{\mathrm{d}\Phi_B}{\mathrm{d}t}.$$
+
+Il segno meno esprime la **legge di Lenz**: la corrente indotta circola in un verso tale da produrre un campo magnetico che si oppone alla variazione di flusso che l'ha generata. Se il flusso aumenta, la corrente indotta genera un flusso opposto; se diminuisce, genera un flusso concorde. La legge di Lenz è una manifestazione della conservazione dell'energia: se la corrente indotta favorisse la variazione, si avrebbe un meccanismo di autoalimentazione capace di produrre energia dal nulla. Per esempio, avvicinando un polo nord a una spira, nella spira si induce una corrente che presenta verso il magnete un polo nord, respingendolo: l'operatore deve compiere lavoro, che si ritrova come energia dissipata per effetto Joule nella spira.
+
+La forza elettromotrice è, per definizione, il lavoro per unità di carica compiuto lungo il circuito dalle forze che agiscono sui portatori: $\mathcal{E}=\oint(\vec{F}/q)\cdot\mathrm{d}\vec{l}$. Si distinguono due casi fisicamente diversi. Quando il circuito si muove in un campo magnetico statico (**f.e.m. di movimento**), la forza che agisce sui portatori è la forza di Lorentz magnetica, $\vec{F}/q = \vec{v}\times\vec{B}$; un esempio è la sbarretta conduttrice di lunghezza $l$ che scorre con velocità $v$ su due binari in un campo $B$ perpendicolare, in cui $\mathcal{E}=Blv$, coerente con $\mathrm{d}\Phi/\mathrm{d}t = Bl\,\mathrm{d}x/\mathrm{d}t$. Quando invece il circuito è fermo e il campo magnetico varia nel tempo, sui portatori fermi non può agire una forza magnetica: la forza elettromotrice deve essere dovuta a un **campo elettrico indotto**, e scriviamo
+
+$$\oint_\gamma\vec{E}\cdot\mathrm{d}\vec{l} = -\frac{\mathrm{d}}{\mathrm{d}t}\int_S\vec{B}\cdot\hat{n}\,\mathrm{d}S.$$
+
+Questa è la forma più profonda della legge: essa vale per qualunque linea chiusa nello spazio, anche in assenza di conduttori. Un campo magnetico variabile genera nello spazio un campo elettrico la cui circuitazione non è nulla: **il campo elettrico indotto non è conservativo**, e non può essere descritto da un potenziale scalare. Che i due casi, moto del circuito e variazione del campo, diano la stessa legge del flusso fu per Einstein uno dei punti di partenza della relatività: per il principio di relatività conta solo il moto relativo tra magnete e circuito, e la distinzione tra f.e.m. "elettrica" e "magnetica" dipende dal riferimento, come abbiamo visto nella sezione precedente.
+
+Le applicazioni della legge sono innumerevoli: il **generatore** (alternatore), in cui una bobina che ruota con velocità angolare $\omega$ in un campo uniforme produce $\mathcal{E}=NBS\omega\sin\omega t$; il **trasformatore**, in cui il flusso variabile prodotto dal primario induce nel secondario una tensione nel rapporto del numero di spire; le **correnti parassite** (di Foucault), usate nei freni elettromagnetici e nei fornelli a induzione; i pick-up delle chitarre elettriche e le carte contactless.
+
+### 24.2.2 Corrente di spostamento
+
+Il teorema di Ampère nella forma magnetostatica, $\oint\vec{B}\cdot\mathrm{d}\vec{l}=\mu_0 I_{conc}$, presenta un'incoerenza quando le correnti non sono stazionarie. Consideriamo un condensatore piano che si sta caricando attraverso un filo percorso dalla corrente $I$, e una linea chiusa $\gamma$ che circonda il filo. Se si sceglie come superficie appoggiata a $\gamma$ un disco attraversato dal filo, la corrente concatenata è $I$; se invece si sceglie una superficie a forma di sacchetto che passa tra le armature del condensatore senza toccare il filo, la corrente concatenata è nulla, perché nello spazio tra le armature non scorre carica. La circuitazione di $\vec{B}$ lungo la stessa linea non può avere due valori diversi: il teorema di Ampère, così com'è, non può essere valido.
+
+L'origine del problema è chiara in forma differenziale: dalla legge di Ampère $\nabla\times\vec{B}=\mu_0\vec{J}$ segue $\nabla\cdot\vec{J}=0$, mentre l'equazione di continuità impone $\nabla\cdot\vec{J}=-\partial\rho/\partial t$, che è diverso da zero dove la carica si accumula, come sulle armature del condensatore. Maxwell risolse la contraddizione osservando che, per il teorema di Gauss, $\rho=\varepsilon_0\nabla\cdot\vec{E}$, e quindi
+
+$$\nabla\cdot\vec{J}+\frac{\partial\rho}{\partial t} = \nabla\cdot\left(\vec{J}+\varepsilon_0\frac{\partial\vec{E}}{\partial t}\right) = 0.$$
+
+La combinazione tra parentesi ha sempre divergenza nulla. Maxwell propose quindi di sostituire nella legge di Ampère la densità di corrente di conduzione $\vec{J}$ con questa somma, introducendo la **densità di corrente di spostamento**
+
+$$\vec{J}_s = \varepsilon_0\frac{\partial\vec{E}}{\partial t}.$$
+
+La legge di **Ampère-Maxwell** diventa
+
+$$\oint_\gamma\vec{B}\cdot\mathrm{d}\vec{l} = \mu_0 I_{conc}+\mu_0\varepsilon_0\frac{\mathrm{d}}{\mathrm{d}t}\int_S\vec{E}\cdot\hat{n}\,\mathrm{d}S.$$
+
+Nel caso del condensatore, tra le armature il campo è $E=\sigma/\varepsilon_0=Q/(\varepsilon_0A)$, quindi il flusso di $\vec{E}$ attraverso la superficie a sacchetto è $Q/\varepsilon_0$ e la corrente di spostamento è $\varepsilon_0\,\mathrm{d}(Q/\varepsilon_0)/\mathrm{d}t = \mathrm{d}Q/\mathrm{d}t = I$: esattamente la corrente di conduzione nel filo. La circuitazione ora non dipende più dalla superficie scelta, e la contraddizione è risolta. Il nome "corrente di spostamento" è un retaggio storico, legato all'idea di Maxwell che si trattasse di uno spostamento di cariche nell'etere; in realtà nel vuoto non c'è alcun moto di cariche, e il termine esprime semplicemente il fatto che **un campo elettrico variabile genera un campo magnetico**, simmetricamente a quanto accade nella legge di Faraday.
+
+Nei circuiti ordinari la corrente di spostamento è spesso trascurabile rispetto a quella di conduzione, e la sua esistenza è stata verificata direttamente solo con misure delicate del campo magnetico tra le armature di un condensatore in alternata. La sua conferma più spettacolare è però indiretta: senza la corrente di spostamento non esisterebbero le onde elettromagnetiche.
+
+### 24.2.3 Forma integrale
+
+Siamo ora in grado di scrivere le **equazioni di Maxwell** nel vuoto, in forma integrale, valide per campi comunque variabili nel tempo. Per ogni superficie chiusa $S$ e ogni linea chiusa $\gamma$ (bordo di una superficie aperta $\Sigma$):
+
+$$\oint_S\vec{E}\cdot\hat{n}\,\mathrm{d}S = \frac{Q_{int}}{\varepsilon_0}\qquad\text{(Gauss elettrico)}$$
+$$\oint_S\vec{B}\cdot\hat{n}\,\mathrm{d}S = 0\qquad\text{(Gauss magnetico)}$$
+$$\oint_\gamma\vec{E}\cdot\mathrm{d}\vec{l} = -\frac{\mathrm{d}}{\mathrm{d}t}\int_\Sigma\vec{B}\cdot\hat{n}\,\mathrm{d}S\qquad\text{(Faraday-Neumann-Lenz)}$$
+$$\oint_\gamma\vec{B}\cdot\mathrm{d}\vec{l} = \mu_0 I_{conc}+\mu_0\varepsilon_0\frac{\mathrm{d}}{\mathrm{d}t}\int_\Sigma\vec{E}\cdot\hat{n}\,\mathrm{d}S\qquad\text{(Ampère-Maxwell)}$$
+
+Le prime due equazioni riguardano i flussi e descrivono le sorgenti: le cariche elettriche sono sorgenti del campo elettrico, mentre non esistono sorgenti scalari del campo magnetico. Le ultime due riguardano le circuitazioni e descrivono l'accoppiamento dinamico: la variazione temporale di ciascun campo genera l'altro. Insieme alla forza di Lorentz $\vec{F}=q(\vec{E}+\vec{v}\times\vec{B})$, che descrive come i campi agiscono sulle cariche, esse racchiudono l'intero elettromagnetismo classico. Nel caso statico, con le derivate temporali nulle, si ritrovano le leggi dell'elettrostatica e della magnetostatica studiate nei capitoli precedenti.
+
+Si noti la notevole simmetria delle equazioni in assenza di cariche e correnti: le due equazioni di flusso sono entrambe omogenee, e le due di circuitazione differiscono solo per il segno e per il fattore $\mu_0\varepsilon_0 = 1/c^2$. La residua asimmetria tra $\vec{E}$ e $\vec{B}$ in presenza di sorgenti è dovuta all'assenza di cariche e correnti magnetiche.
+
+### 24.2.4 Forma differenziale
+
+Applicando il teorema della divergenza alle equazioni di flusso e il teorema di Stokes a quelle di circuitazione, con le stesse argomentazioni usate nella sezione 23.7, si ottiene la **forma differenziale** (o locale):
+
+$$\nabla\cdot\vec{E} = \frac{\rho}{\varepsilon_0},\qquad \nabla\cdot\vec{B}=0,$$
+$$\nabla\times\vec{E} = -\frac{\partial\vec{B}}{\partial t},\qquad \nabla\times\vec{B} = \mu_0\vec{J}+\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}.$$
+
+Nella forma integrale della legge di Faraday compare la derivata totale del flusso, che tiene conto anche di un eventuale moto del circuito; nella forma differenziale, che riguarda punti fissi dello spazio, compare la derivata parziale del campo. Le equazioni differenziali contengono implicitamente la **conservazione della carica**: prendendo la divergenza della quarta e usando la prima si ottiene $\nabla\cdot\vec{J}+\partial\rho/\partial t=0$. Sono equazioni lineari nei campi, per cui vale il principio di sovrapposizione, e sono, come anticipato, invarianti sotto trasformazioni di Lorentz.
+
+I campi possono ancora essere espressi tramite potenziali. Da $\nabla\cdot\vec{B}=0$ segue sempre $\vec{B}=\nabla\times\vec{A}$; sostituendo nella legge di Faraday si ha $\nabla\times(\vec{E}+\partial\vec{A}/\partial t)=0$, per cui la combinazione tra parentesi è il gradiente di un potenziale scalare: $\vec{E}=-\nabla V-\partial\vec{A}/\partial t$. In regime dinamico, dunque, il campo elettrico non è più solo il gradiente del potenziale: c'è un contributo legato alla variazione temporale del potenziale vettore, che è proprio il campo elettrico indotto.
+
+In un **mezzo materiale** lineare, omogeneo e isotropo le equazioni si scrivono in modo analogo introducendo i campi $\vec{D}=\varepsilon\vec{E}$ e $\vec{H}=\vec{B}/\mu$, con le sole cariche e correnti libere come sorgenti: $\nabla\cdot\vec{D}=\rho_{lib}$ e $\nabla\times\vec{H}=\vec{J}_{lib}+\partial\vec{D}/\partial t$. Le costanti del vuoto sono sostituite da $\varepsilon=\varepsilon_0\varepsilon_r$ e $\mu=\mu_0\mu_r$, con conseguenze importanti per la propagazione delle onde, come vedremo nella prossima sezione.
+
+### Esercizio d'esempio
+
+**Problema.** Un condensatore piano ha armature circolari di raggio $R=5{,}0\,\mathrm{cm}$ distanti $d=2{,}0\,\mathrm{mm}$ ed è caricato da una corrente costante $I=0{,}20\,\mathrm{A}$. Calcolare la rapidità di variazione del campo elettrico tra le armature, la corrente di spostamento e il campo magnetico a distanza $r=3{,}0\,\mathrm{cm}$ e $r=8{,}0\,\mathrm{cm}$ dall'asse, nel piano medio. Si trascurino gli effetti di bordo.
+
+**Soluzione.** Tra le armature $E = Q/(\varepsilon_0\pi R^2)$, quindi
+$$\frac{\mathrm{d}E}{\mathrm{d}t} = \frac{I}{\varepsilon_0\pi R^2} = \frac{0{,}20}{8{,}85\times10^{-12}\cdot\pi\cdot(5{,}0\times10^{-2})^2}\simeq 2{,}9\times10^{12}\,\mathrm{V\,m^{-1}s^{-1}}.$$
+La corrente di spostamento totale attraverso le armature è $I_s = \varepsilon_0\pi R^2\,\mathrm{d}E/\mathrm{d}t = I = 0{,}20\,\mathrm{A}$.
+
+Per simmetria il campo magnetico è azimutale. Per $r<R$ la corrente di spostamento concatenata è $I r^2/R^2$:
+$$B(r) = \frac{\mu_0 I r}{2\pi R^2} = \frac{2\times10^{-7}\cdot0{,}20\cdot3{,}0\times10^{-2}}{(5{,}0\times10^{-2})^2}\simeq 4{,}8\times10^{-7}\,\mathrm{T}.$$
+Per $r>R$ è concatenata tutta la corrente di spostamento:
+$$B(r) = \frac{\mu_0 I}{2\pi r} = \frac{2\times10^{-7}\cdot0{,}20}{8{,}0\times10^{-2}} = 5{,}0\times10^{-7}\,\mathrm{T},$$
+lo stesso valore che si avrebbe attorno al filo di alimentazione alla stessa distanza.
+
+### Punti chiave
+
+- Legge di Faraday-Neumann-Lenz: $\mathcal{E}=-\mathrm{d}\Phi_B/\mathrm{d}t$; il segno meno (Lenz) garantisce la conservazione dell'energia.
+- Un campo magnetico variabile genera un campo elettrico non conservativo: $\oint\vec{E}\cdot\mathrm{d}\vec{l}=-\mathrm{d}\Phi_B/\mathrm{d}t$.
+- La corrente di spostamento $\varepsilon_0\,\partial\vec{E}/\partial t$ rende la legge di Ampère compatibile con la conservazione della carica.
+- Le quattro equazioni di Maxwell, in forma integrale o differenziale, con la forza di Lorentz descrivono tutto l'elettromagnetismo classico.
+- Forma differenziale: $\nabla\cdot\vec{E}=\rho/\varepsilon_0$, $\nabla\cdot\vec{B}=0$, $\nabla\times\vec{E}=-\partial\vec{B}/\partial t$, $\nabla\times\vec{B}=\mu_0\vec{J}+\mu_0\varepsilon_0\partial\vec{E}/\partial t$.
+- In regime dinamico $\vec{E}=-\nabla V-\partial\vec{A}/\partial t$.
+- Nei mezzi lineari si usano $\vec{D}=\varepsilon\vec{E}$ e $\vec{H}=\vec{B}/\mu$ con le sole sorgenti libere.
+

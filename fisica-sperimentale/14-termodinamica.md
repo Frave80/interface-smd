@@ -275,3 +275,170 @@ $\Delta S_{univ} \simeq +21{,}0$ J/K $> 0$, come richiesto per un processo spont
 - In un sistema isolato $\Delta S \ge 0$: l'entropia dell'universo cresce nei processi irreversibili.
 - Energia degradata $E_{deg} = T_0\Delta S_{univ}$: l'irreversibilità distrugge capacità di produrre lavoro.
 
+## 14.3 Potenziali termodinamici
+
+Il primo e il secondo principio, combinati, permettono di scrivere un'unica relazione fondamentale per le trasformazioni reversibili di un sistema semplice (per esempio un fluido) che scambia solo lavoro di volume. Da $dU = \delta Q - \delta W$, con $\delta Q_{rev} = T\,dS$ e $\delta W = p\,dV$, si ottiene l'**equazione fondamentale della termodinamica**:
+
+$$
+dU = T\,dS - p\,dV .
+$$
+
+Poiché coinvolge solo funzioni di stato, questa relazione vale per qualunque coppia di stati di equilibrio vicini, anche se il processo reale che li collega è irreversibile. Essa mostra che l'energia interna è naturalmente funzione di entropia e volume, $U = U(S, V)$, e che le sue derivate parziali danno temperatura e pressione. Le variabili $S$ e $V$, tuttavia, non sono sempre le più comode: in laboratorio è facile controllare temperatura e pressione, molto meno l'entropia. Per questo si introducono altre funzioni di stato, i **potenziali termodinamici**, ottenute da $U$ mediante una **trasformata di Legendre**, cioè sottraendo o aggiungendo prodotti di variabili coniugate ($TS$, $pV$). Ogni potenziale ha le sue **variabili naturali**, e conoscerlo in funzione di esse equivale a conoscere completamente le proprietà termodinamiche del sistema. Il nome "potenziale" deriva dall'analogia con l'energia potenziale in meccanica: come un sistema meccanico in equilibrio minimizza la propria energia potenziale, un sistema termodinamico in equilibrio, nelle opportune condizioni di vincolo, minimizza il potenziale termodinamico corrispondente.
+
+### 14.3.1 Energia interna
+
+L'**energia interna** $U(S, V)$ è il primo potenziale termodinamico. Dal differenziale $dU = T\,dS - p\,dV$ si leggono immediatamente le **relazioni di stato**:
+
+$$
+T = \left(\frac{\partial U}{\partial S}\right)_V, \qquad p = -\left(\frac{\partial U}{\partial V}\right)_S .
+$$
+
+Il significato fisico è diretto: in una trasformazione **adiabatica reversibile** ($dS = 0$) la variazione di energia interna è uguale al lavoro fatto sul sistema, $dU = -p\,dV$; in una trasformazione **isocora** ($dV = 0$) la variazione di energia interna è uguale al calore assorbito, $dU = \delta Q_V$, da cui $C_V = (\partial U/\partial T)_V$. Il criterio di equilibrio associato è il seguente: per un sistema a entropia e volume fissati, l'equilibrio corrisponde al minimo dell'energia interna. Questo criterio è il "duale" del principio di massima entropia per un sistema isolato ($U$ e $V$ fissati). In pratica il vincolo di entropia costante è difficile da imporre, e $U$ si usa soprattutto per sistemi isolati o per trasformazioni adiabatiche e isocore. Per il gas ideale $U = nc_VT$ e, esprimendo $T$ in funzione di $S$ e $V$, si ritrova $U \propto V^{1-\gamma}e^{S/(nc_V)}$, da cui derivando si ottiene l'equazione di stato: un esempio di come un potenziale nelle sue variabili naturali contenga tutta l'informazione sul sistema.
+
+### 14.3.2 Entalpia
+
+L'**entalpia** è definita come
+
+$$
+H = U + pV, \qquad dH = T\,dS + V\,dp ,
+$$
+
+ed è naturalmente funzione di entropia e pressione, $H(S, p)$. Le sue derivate sono $T = (\partial H/\partial S)_p$ e $V = (\partial H/\partial p)_S$. Il significato fisico più importante è che, in una trasformazione **isobara**, la variazione di entalpia è uguale al calore scambiato: $dH = \delta Q_p$, quindi $C_p = (\partial H/\partial T)_p$. Poiché moltissimi processi chimici, biologici e industriali avvengono a pressione atmosferica costante, l'entalpia è la grandezza naturale per esprimere i bilanci di calore: i **calori di reazione**, i **calori latenti** di fusione e di evaporazione e i poteri calorifici dei combustibili sono variazioni di entalpia tabulate.
+
+L'entalpia è centrale anche nell'ingegneria dei **sistemi aperti** con flusso stazionario (turbine, compressori, ugelli, scambiatori): il bilancio energetico di un fluido che attraversa un dispositivo, trascurando energie cinetica e potenziale, si scrive $\dot Q - \dot W_{albero} = \dot m\,(h_{uscita} - h_{ingresso})$, dove $h$ è l'entalpia specifica; il termine $pV$ rappresenta il **lavoro di pulsione** necessario per spingere il fluido dentro e fuori dal dispositivo. Una conseguenza è che in una **laminazione** adiabatica attraverso una valvola, senza lavoro, l'entalpia si conserva: è il processo isentalpico dell'effetto Joule-Thomson. Per un gas ideale $H = nc_pT$, quindi anche l'entalpia dipende solo dalla temperatura e l'espansione di Joule-Thomson non produce variazioni di temperatura.
+
+### 14.3.3 Energia libera di Helmholtz
+
+L'**energia libera di Helmholtz** è definita come
+
+$$
+F = U - TS, \qquad dF = -S\,dT - p\,dV ,
+$$
+
+con variabili naturali temperatura e volume, $F(T, V)$, e derivate $S = -(\partial F/\partial T)_V$, $p = -(\partial F/\partial V)_T$. Il suo significato fisico emerge considerando un sistema a contatto con un termostato a temperatura $T$. Dalla disuguaglianza di Clausius $\delta Q \le T\,dS$ e dal primo principio si ricava che il lavoro compiuto dal sistema in una trasformazione isoterma soddisfa
+
+$$
+W \le -\Delta F ,
+$$
+
+con l'uguaglianza solo nel caso reversibile. La diminuzione dell'energia libera di Helmholtz rappresenta quindi il **massimo lavoro** che un sistema può compiere a temperatura costante: è la parte "libera", cioè utilizzabile, dell'energia interna, mentre il termine $TS$ rappresenta una parte "vincolata", che deve necessariamente essere scambiata come calore con il termostato. Il criterio di equilibrio è: per un sistema a $T$ e $V$ costanti, i processi spontanei fanno diminuire $F$, e l'equilibrio corrisponde al minimo di $F$. Questo esprime una competizione tra energia ed entropia: a bassa temperatura prevale la tendenza a minimizzare $U$ (ordine, cristallizzazione), ad alta temperatura prevale la tendenza a massimizzare $S$ (disordine, fusione, evaporazione). L'energia libera di Helmholtz è la grandezza più direttamente collegata alla meccanica statistica, dove si ottiene dalla funzione di partizione come $F = -k_BT\ln Z$.
+
+### 14.3.4 Energia libera di Gibbs
+
+L'**energia libera di Gibbs** (o entalpia libera) è definita come
+
+$$
+G = H - TS = U + pV - TS, \qquad dG = -S\,dT + V\,dp ,
+$$
+
+con variabili naturali temperatura e pressione, $G(T, p)$, e derivate $S = -(\partial G/\partial T)_p$, $V = (\partial G/\partial p)_T$. Poiché temperatura e pressione sono le variabili più facilmente controllabili in laboratorio e nei processi naturali (un recipiente aperto all'atmosfera e in equilibrio termico con l'ambiente), $G$ è il potenziale più usato in chimica e in scienza dei materiali. Il suo criterio di equilibrio è: **a $T$ e $p$ costanti, i processi spontanei fanno diminuire $G$**, e l'equilibrio corrisponde al suo minimo. La diminuzione $-\Delta G$ è il massimo lavoro utile, diverso dal lavoro di volume contro l'atmosfera, che il sistema può fornire: per esempio il lavoro elettrico di una pila o di una cella a combustibile, la cui forza elettromotrice è $\mathcal{E} = -\Delta G/(zF)$ con $F$ costante di Faraday.
+
+Il segno di $\Delta G = \Delta H - T\Delta S$ decide la spontaneità di una reazione chimica: una reazione esotermica ($\Delta H < 0$) con aumento di entropia ($\Delta S > 0$) è sempre spontanea; una endotermica con diminuzione di entropia non lo è mai; negli altri casi la temperatura decide. Nelle **transizioni di fase**, le due fasi coesistono in equilibrio quando le loro energie libere di Gibbs molari (potenziali chimici) sono uguali; imponendo che restino uguali lungo la curva di coesistenza, $dg_1 = dg_2$, si ritrova elegantemente l'equazione di Clapeyron: $-s_1\,dT + v_1\,dp = -s_2\,dT + v_2\,dp$, da cui $dp/dT = (s_2 - s_1)/(v_2 - v_1) = \lambda/[T(v_2 - v_1)]$.
+
+### 14.3.5 Relazioni di Maxwell
+
+Poiché i potenziali termodinamici sono funzioni di stato, i loro differenziali sono **esatti** e le derivate seconde miste non dipendono dall'ordine di derivazione (teorema di Schwarz). Applicando questa proprietà ai quattro differenziali si ottengono le **relazioni di Maxwell**:
+
+$$
+\left(\frac{\partial T}{\partial V}\right)_S = -\left(\frac{\partial p}{\partial S}\right)_V \quad (\text{da } U), \qquad \left(\frac{\partial T}{\partial p}\right)_S = \left(\frac{\partial V}{\partial S}\right)_p \quad (\text{da } H),
+$$
+
+$$
+\left(\frac{\partial S}{\partial V}\right)_T = \left(\frac{\partial p}{\partial T}\right)_V \quad (\text{da } F), \qquad \left(\frac{\partial S}{\partial p}\right)_T = -\left(\frac{\partial V}{\partial T}\right)_p \quad (\text{da } G).
+$$
+
+La loro utilità è enorme: permettono di esprimere derivate che coinvolgono l'entropia, non misurabile direttamente, in termini di derivate di $p$, $V$, $T$, che si ricavano dall'equazione di stato o da misure di dilatazione e compressibilità. Un esempio classico è l'**equazione dell'energia**: da $dU = T\,dS - p\,dV$, a $T$ costante, e usando la relazione di Maxwell da $F$,
+
+$$
+\left(\frac{\partial U}{\partial V}\right)_T = T\left(\frac{\partial p}{\partial T}\right)_V - p .
+$$
+
+Per il gas ideale $T(\partial p/\partial T)_V = nRT/V = p$, quindi $(\partial U/\partial V)_T = 0$: l'energia interna non dipende dal volume. È esattamente il risultato dell'esperimento di Joule, qui ricavato dalla sola equazione di stato e dal secondo principio. Per un gas di Van der Waals si trova invece $(\partial U/\partial V)_T = an^2/V^2$: l'energia interna aumenta con il volume perché bisogna compiere lavoro contro le forze attrattive. Analogamente si dimostra la relazione generale $C_p - C_V = TV\alpha^2/\kappa_T$, dove $\alpha$ è il coefficiente di dilatazione volumica e $\kappa_T$ la compressibilità isoterma: essa generalizza la relazione di Mayer a qualunque sostanza e mostra che $C_p \ge C_V$ sempre.
+
+### Esercizio d'esempio
+
+Si consideri la combustione dell'idrogeno a $T = 298$ K e $p = 1$ atm: $\text{H}_2 + \tfrac12\text{O}_2 \to \text{H}_2\text{O}$ (liquida), con $\Delta H = -285{,}8$ kJ/mol e $\Delta S = -163{,}3$ J/(mol K). Si calcolino $\Delta G$, il massimo lavoro elettrico ottenibile in una cella a combustibile, il calore scambiato in condizioni reversibili e la forza elettromotrice della cella ($z = 2$, $F = 96\,485$ C/mol).
+
+**Soluzione.** 
+
+$$
+\Delta G = \Delta H - T\Delta S = -285{,}8\times10^3 - 298\cdot(-163{,}3) \simeq -285{,}8\times10^3 + 48{,}7\times10^3 \simeq -237{,}1\ \text{kJ/mol}.
+$$
+
+Il massimo lavoro utile per mole di idrogeno è $W_{max} = -\Delta G \simeq 237$ kJ. In condizioni reversibili la cella cede all'ambiente il calore $Q = T\Delta S \simeq -48{,}7$ kJ/mol: anche il processo ideale non può convertire in lavoro tutta l'entalpia di reazione, perché l'entropia del sistema diminuisce e deve essere compensata. Il rendimento ideale della cella è $\Delta G/\Delta H \simeq 83\%$, non limitato da Carnot perché non si tratta di una macchina termica. La forza elettromotrice vale $\mathcal{E} = -\Delta G/(zF) = 237{,}1\times10^3/(2\cdot96\,485) \simeq 1{,}23$ V, valore ben noto per la cella idrogeno-ossigeno.
+
+### Punti chiave
+
+- L'equazione fondamentale $dU = T\,dS - p\,dV$ combina primo e secondo principio e vale tra stati di equilibrio qualsiasi.
+- I potenziali si ottengono per trasformata di Legendre: $U(S,V)$, $H = U + pV\ (S,p)$, $F = U - TS\ (T,V)$, $G = H - TS\ (T,p)$.
+- $\Delta U = Q$ a volume costante, $\Delta H = Q$ a pressione costante; $C_V = (\partial U/\partial T)_V$, $C_p = (\partial H/\partial T)_p$.
+- $-\Delta F$ è il massimo lavoro a $T$ costante; $-\Delta G$ il massimo lavoro utile a $T$ e $p$ costanti.
+- All'equilibrio il potenziale appropriato ai vincoli è minimo; $\Delta G < 0$ indica un processo spontaneo a $T$ e $p$ costanti.
+- Le relazioni di Maxwell derivano dall'esattezza dei differenziali e permettono di calcolare grandezze entropiche dall'equazione di stato.
+
+## 14.4 Terzo principio della termodinamica
+
+Il secondo principio definisce l'entropia solo a meno di una costante additiva: la relazione $dS = \delta Q_{rev}/T$ permette di calcolare **differenze** di entropia tra due stati, ma non il valore assoluto. Per molte applicazioni questo è sufficiente, ma in chimica fisica si pone un problema concreto: per prevedere l'equilibrio di una reazione occorre conoscere la variazione di entropia tra reagenti e prodotti, che sono sostanze diverse, non collegabili tra loro da una trasformazione reversibile semplice. Serve dunque un riferimento comune per le entropie di tutte le sostanze. Inoltre, all'inizio del Novecento, le misure di calori specifici a bassa temperatura rivelavano comportamenti inspiegabili con la fisica classica: i calori specifici dei solidi tendevano a zero al diminuire della temperatura, contro la previsione di Dulong e Petit. Il **terzo principio della termodinamica**, formulato da Walther Nernst tra il 1906 e il 1912 e successivamente precisato da Max Planck, risponde a entrambe le questioni, fissando il comportamento dell'entropia in prossimità dello zero assoluto. A differenza del primo e del secondo principio, che hanno origine classica, il terzo principio ha una giustificazione profonda solo in meccanica quantistica e statistica.
+
+### 14.4.1 Terzo principio della termodinamica
+
+Nernst, studiando le reazioni chimiche tra solidi a temperature via via più basse, osservò che la variazione di energia libera $\Delta G$ e la variazione di entalpia $\Delta H$ di una reazione tendono a coincidere al tendere di $T$ a zero e, inoltre, che si avvicinano l'una all'altra con tangente orizzontale. Poiché $\Delta G = \Delta H - T\Delta S$, questo comportamento implica che anche $\Delta S$ tenda a zero. Ne nasce il **teorema del calore di Nernst**:
+
+> Al tendere della temperatura assoluta a zero, la variazione di entropia associata a qualunque trasformazione isoterma reversibile tra stati di equilibrio tende a zero:
+> $$\lim_{T\to0}\,\Delta S_T = 0 .$$
+
+In altre parole, allo zero assoluto tutti gli stati di equilibrio di un sistema (per esempio a pressioni diverse, o in fasi cristalline diverse) hanno la stessa entropia. Le curve isoterme e le curve adiabatiche reversibili, che a temperature ordinarie sono ben distinte, tendono a confondersi nell'avvicinarsi a $T = 0$.
+
+Da questa formulazione discende una conseguenza fondamentale, spesso assunta come enunciato alternativo del terzo principio: il **principio di irraggiungibilità dello zero assoluto**.
+
+> È impossibile raggiungere lo zero assoluto mediante un numero finito di operazioni.
+
+Il ragionamento si capisce con il metodo di raffreddamento per **demagnetizzazione adiabatica**, con cui si raggiungono le temperature più basse. Un sale paramagnetico viene magnetizzato isotermicamente a contatto con un bagno freddo (l'entropia diminuisce perché i momenti magnetici si allineano), poi isolato e smagnetizzato adiabaticamente (l'entropia resta costante e quindi la temperatura scende). Ripetendo il ciclo si scende sempre più in basso. Nel diagramma $(T, S)$ le curve dell'entropia a campo nullo e a campo applicato convergono nello stesso punto a $T = 0$, per il teorema di Nernst: quindi ogni passo successivo produce un abbassamento di temperatura sempre più piccolo, e servirebbero infiniti passi per raggiungere lo zero. Con tecniche di questo tipo, e con raffreddamento laser e evaporativo per gas atomici, si sono raggiunte temperature di frazioni di nanokelvin, ma mai esattamente lo zero.
+
+Il terzo principio ha conseguenze misurabili sul comportamento delle grandezze termodinamiche. Poiché l'entropia a una temperatura $T$ si ottiene come
+
+$$
+S(T) - S(0) = \int_0^T \frac{C(T')}{T'}\,dT',
+$$
+
+l'integrale deve essere finito, il che impone che **le capacità termiche tendano a zero** per $T \to 0$ (altrimenti l'integrando divergerebbe come $1/T'$ e l'integrale come un logaritmo). È esattamente quanto osservato: nei solidi isolanti a bassa temperatura il calore specifico va come $T^3$ (**legge di Debye**), nei metalli c'è anche un contributo elettronico proporzionale a $T$. Il fallimento della legge di Dulong e Petit è quindi richiesto dal terzo principio. Analogamente, tendono a zero il coefficiente di dilatazione termica e la pendenza delle curve di coesistenza di fase: per esempio la curva di fusione dell'elio-4 diventa orizzontale vicino allo zero assoluto, come richiesto dall'equazione di Clapeyron con $\Delta S \to 0$. Un'ulteriore conseguenza è che il gas ideale classico, la cui entropia contiene un termine $nc_V\ln T$ che diverge per $T \to 0$, è incompatibile con il terzo principio: a temperature bassissime ogni gas deve comportarsi in modo quantistico (o, più realisticamente, condensa).
+
+### 14.4.2 Ipotesi di Nernst-Planck
+
+Il teorema di Nernst afferma che le differenze di entropia si annullano allo zero assoluto, ma non dice quanto valga l'entropia in quel punto. Planck (1911) ne propose una formulazione più forte, nota come **ipotesi di Nernst-Planck** o enunciato di Planck del terzo principio:
+
+> L'entropia di una sostanza pura in forma di **cristallo perfetto** tende a zero quando la temperatura tende allo zero assoluto:
+> $$\lim_{T\to0} S = 0 .$$
+
+Questa scelta fissa la costante additiva dell'entropia in modo universale e permette di definire l'**entropia assoluta** (o terza-principio) di ogni sostanza, misurabile per via calorimetrica: si integra $C_p/T$ dal più basso valore di temperatura accessibile (estrapolando con la legge di Debye fino a zero) e si aggiungono i contributi $\Delta H_{tr}/T_{tr}$ di tutte le transizioni di fase incontrate. Le **entropie molari standard** tabulate nei manuali di chimica, per esempio circa 70 J/(mol K) per l'acqua liquida e 189 J/(mol K) per il vapore a 298 K, sono ottenute proprio in questo modo e consentono di calcolare $\Delta S$ e quindi $\Delta G$ di qualunque reazione a partire dai soli dati termici, senza dover misurare costanti di equilibrio.
+
+Il significato microscopico dell'ipotesi diventa chiaro con la relazione di Boltzmann $S = k_B\ln W$, che sarà discussa nel prossimo capitolo: l'entropia è proporzionale al logaritmo del numero di microstati compatibili con lo stato macroscopico. Allo zero assoluto un sistema quantistico si trova nel suo **stato fondamentale**; se questo è unico (non degenere), come avviene per un cristallo perfetto in cui ogni atomo occupa una posizione reticolare ben precisa, allora $W = 1$ e $S = k_B\ln1 = 0$. Il terzo principio è quindi, in ultima analisi, una conseguenza della natura quantistica della materia: in fisica classica le energie possono variare con continuità e il concetto di "numero di stati" perde significato assoluto.
+
+L'ipotesi di Planck ammette eccezioni apparenti ben note, che ne confermano lo spirito. Alcune sostanze conservano un'**entropia residua** a temperature bassissime perché non riescono a raggiungere il vero equilibrio in tempi sperimentali: è il caso del monossido di carbonio solido, le cui molecole CO possono orientarsi indifferentemente come CO oppure OC nel reticolo, "congelando" un disordine con entropia residua prossima a $R\ln2 \simeq 5{,}8$ J/(mol K); oppure del ghiaccio comune, in cui la disposizione degli atomi di idrogeno nei legami a idrogeno ha molte configurazioni equivalenti (entropia residua di Pauling, circa 3,4 J/(mol K)). Anche i vetri, solidi amorfi, sono stati di non equilibrio con entropia residua. In tutti questi casi il sistema non è un cristallo perfetto in equilibrio, e quindi l'ipotesi di Nernst-Planck non si applica: le misure calorimetriche sottostimano l'entropia "vera", e il confronto con il valore calcolato dalla meccanica statistica rivela proprio il disordine congelato.
+
+### Esercizio d'esempio
+
+A bassissima temperatura il calore specifico molare di un solido isolante segue la legge di Debye, $c(T) = A\,T^3$. Per un certo cristallo si misura $c = 0{,}20$ J/(mol K) a $T_1 = 10$ K. Si calcolino l'entropia molare a 10 K, assumendo valida l'ipotesi di Nernst-Planck, e il calore necessario per riscaldare una mole da 0 a 10 K.
+
+**Soluzione.** Dalla misura si ricava $A = c/T_1^3 = 0{,}20/1000 = 2{,}0\times10^{-4}$ J/(mol K$^4$). L'entropia, con $S(0) = 0$:
+
+$$
+S(T_1) = \int_0^{T_1}\frac{A\,T^3}{T}\,dT = \frac{A\,T_1^3}{3} = \frac{c(T_1)}{3} = \frac{0{,}20}{3} \simeq 6{,}7\times10^{-2}\ \text{J/(mol K)}.
+$$
+
+Il calore:
+
+$$
+Q = \int_0^{T_1} A\,T^3\,dT = \frac{A\,T_1^4}{4} = \frac{2{,}0\times10^{-4}\cdot10^4}{4} = 0{,}50\ \text{J/mol}.
+$$
+
+Si noti che l'integrale dell'entropia converge solo perché $c \to 0$ per $T \to 0$, come richiesto dal terzo principio; con un calore specifico costante (Dulong e Petit, circa 25 J/(mol K)) l'integrale divergerebbe logaritmicamente.
+
+### Punti chiave
+
+- Il secondo principio definisce l'entropia a meno di una costante; il terzo principio ne fissa il comportamento per $T \to 0$.
+- Teorema di Nernst: le variazioni di entropia nelle trasformazioni isoterme tendono a zero per $T \to 0$.
+- Principio di irraggiungibilità: lo zero assoluto non si raggiunge con un numero finito di operazioni.
+- Conseguenze: capacità termiche, coefficienti di dilatazione e pendenze delle curve di coesistenza tendono a zero (legge di Debye $c \propto T^3$).
+- Ipotesi di Nernst-Planck: l'entropia di un cristallo perfetto tende a zero, permettendo di definire entropie assolute dai dati calorimetrici.
+- Interpretazione microscopica: stato fondamentale non degenere, $W = 1$, $S = k_B\ln1 = 0$; entropie residue (CO, ghiaccio, vetri) indicano disordine congelato.

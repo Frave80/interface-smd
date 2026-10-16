@@ -28,7 +28,7 @@ Il primo principio, infine, non è un semplice caso particolare del secondo (per
 
 ### Esercizio d'esempio
 
-**Testo.** Un disco a cuscino d'aria di massa $m = 0{,}200\ \mathrm{kg}$ viene lanciato su un tavolo orizzontale con velocità $v_0 = 0{,}800\ \mathrm{m/s}$. Le posizioni registrate ogni $0{,}500\ \mathrm{s}$ sono $0{,}000$; $0{,}399$; $0{,}797$; $1{,}194$; $1{,}590\ \mathrm{m}$. (a) Verificare se il moto è compatibile con il principio d'inerzia. (b) Stimare l'eventuale forza residua di attrito. (c) Valutare quanto la rotazione terrestre (con accelerazione centripeta massima $a_c \simeq 3{,}4\times10^{-2}\ \mathrm{m/s^2}$, in gran parte compensata dalla definizione stessa di verticale locale) possa influire sul risultato, confrontando con una forza dell'ordine di $m\,\omega_T v_0$, tipica dell'effetto di Coriolis.
+**Testo.** Un disco a cuscino d'aria di massa $m = 0{,}200\ \mathrm{kg}$ viene lanciato su un tavolo orizzontale con velocità $v_0 = 0{,}800\ \mathrm{m/s}$. Le posizioni registrate ogni $0{,}500\ \mathrm{s}$ sono $0{,}000$; $0{,}399$; $0{,}797$; $1{,}194$; $1{,}590\ \mathrm{m}$. (a) Verificare se il moto è compatibile con il principio d'inerzia. (b) Stimare l'eventuale forza residua di attrito. (c) Valutare se la rotazione terrestre possa influire sul risultato, stimando l'ordine di grandezza $m\,\omega_T v_0$ della forza di Coriolis (l'effetto centrifugo è già incluso nella definizione della verticale locale e non agisce lungo il tavolo).
 
 **Soluzione.** (a) Le velocità medie negli intervalli successivi sono
 

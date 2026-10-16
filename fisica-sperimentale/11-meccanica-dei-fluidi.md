@@ -676,3 +676,92 @@ Verifica a posteriori: $Re = \rho_f v_\infty (2r)/\eta = 900\times0{,}15\times2{
 - La portanza $L = \frac12 C_L\rho S v^2$ è perpendicolare alla velocità ed è legata alla circolazione dal teorema di Kutta-Žukovskij $L' = \rho v\Gamma$.
 - L'effetto Magnus produce una forza trasversale su corpi rotanti, proporzionale a $\vec\omega\times\vec v$.
 
+## 11.8 Dinamica dei fluidi comprimibili
+
+Nelle sezioni precedenti si è sempre assunto che la densità del fluido fosse costante. Per i liquidi questa ipotesi è quasi sempre ottima; per i gas è accettabile finché le variazioni di pressione sono piccole rispetto alla pressione stessa, cioè, come si vedrà, finché le velocità sono piccole rispetto alla velocità del suono. Quando questa condizione non è soddisfatta, come negli ugelli dei motori a razzo, nelle turbine a gas, nei compressori, nel volo transonico e supersonico, o nei fenomeni rapidi come le esplosioni e il colpo d'ariete, la comprimibilità diventa essenziale. Il fluido allora non si limita a spostarsi: si comprime e si espande, immagazzinando e restituendo energia elastica e scambiando energia con l'ambiente sotto forma di calore. Due sono gli aspetti fondamentali: la propagazione delle piccole perturbazioni di pressione, cioè il **suono**, e il bilancio energetico completo, che generalizza il principio di Bernoulli includendo l'energia interna del fluido e gli scambi di calore e lavoro.
+
+### 11.8.1 Suono
+
+Il **suono** è una perturbazione di pressione e densità che si propaga in un mezzo materiale come **onda longitudinale**: le particelle del mezzo oscillano nella stessa direzione in cui si propaga l'onda, producendo alternativamente zone di compressione e di rarefazione. In un fluido, che non ha rigidità di taglio, non possono propagarsi onde trasversali di volume, e il suono è necessariamente longitudinale; nei solidi esistono invece entrambi i tipi.
+
+Per ricavare la velocità di propagazione si consideri un tubo di sezione $S$ riempito di fluido a pressione $p$ e densità $\rho$, chiuso a un'estremità da un pistone. All'istante iniziale il pistone viene spinto con una piccola velocità costante $u$. Si forma un fronte di compressione che avanza con velocità $c$; dietro il fronte il fluido si muove con velocità $u$ e ha pressione $p + \Delta p$ e densità $\rho + \Delta\rho$, davanti al fronte è ancora fermo e imperturbato. Nell'intervallo $\Delta t$ il fronte avanza di $c\,\Delta t$, mentre il pistone avanza di $u\,\Delta t$. La conservazione della massa impone che la massa originariamente contenuta nel tratto $c\,\Delta t$ sia ora compressa nel tratto $(c - u)\Delta t$:
+
+$$
+\rho\,c = (\rho + \Delta\rho)(c - u) \quad\Longrightarrow\quad \rho\,u \approx \Delta\rho\,c.
+$$
+
+Il teorema dell'impulso, applicato alla massa $\rho S c\,\Delta t$ messa in moto con velocità $u$, dà $\Delta p\,S\,\Delta t = \rho S c\,\Delta t\,u$, cioè $\Delta p = \rho c u$. Eliminando $u$ tra le due relazioni si ottiene $c^2 = \Delta p/\Delta\rho$, e nel limite di piccole perturbazioni:
+
+$$
+c = \sqrt{\frac{dp}{d\rho}} = \sqrt{\frac{K}{\rho}},
+$$
+
+dove $K = \rho\,dp/d\rho$ è il modulo di compressibilità introdotto nella sezione sulle proprietà elastiche. La velocità del suono è tanto maggiore quanto più il mezzo è rigido e quanto meno è denso. Per l'acqua, $c = \sqrt{2{,}2\times10^9/1000} \approx 1480\ \mathrm{m/s}$; per l'acciaio, nel caso di barre sottili, $c = \sqrt{E/\rho} \approx 5000\ \mathrm{m/s}$.
+
+Per un gas ideale occorre specificare il tipo di trasformazione. Le compressioni e rarefazioni sonore sono così rapide, e la conduzione termica nei gas così lenta, che non c'è tempo per scambiare calore tra zone compresse e rarefatte: la trasformazione è **adiabatica**. Con $p\rho^{-\gamma} = \text{cost}$ si ha $dp/d\rho = \gamma p/\rho$ e, usando l'equazione di stato $p/\rho = RT/M$:
+
+$$
+c = \sqrt{\frac{\gamma p}{\rho}} = \sqrt{\frac{\gamma R T}{M}}.
+$$
+
+Per l'aria ($\gamma = 1{,}40$, $M = 0{,}029\ \mathrm{kg/mol}$) a $T = 293\ \mathrm{K}$ si ottiene $c\approx 343\ \mathrm{m/s}$. La velocità del suono in un gas dipende solo dalla temperatura e non dalla pressione: cresce come $\sqrt T$ (circa $0{,}6\ \mathrm{m/s}$ per kelvin attorno alla temperatura ambiente) e diminuisce all'aumentare della massa molare. Nell'elio è circa tre volte maggiore che nell'aria, e questo spiega la voce acuta di chi lo inspira: le frequenze di risonanza del tratto vocale crescono con $c$. Newton, che aveva assunto una trasformazione isoterma, ottenne $c = \sqrt{p/\rho} \approx 290\ \mathrm{m/s}$, con un errore di circa il 15% rispetto al valore misurato; la correzione adiabatica fu introdotta da Laplace nel 1816. Il confronto tra le due formule fornisce anzi un metodo per misurare $\gamma$.
+
+La velocità del suono è il parametro che decide quando un flusso deve essere considerato comprimibile. Si definisce il **numero di Mach** $Ma = v/c$, rapporto tra la velocità del fluido e quella del suono locale. Dal teorema di Bernoulli, la variazione di pressione dovuta al moto è dell'ordine di $\frac12\rho v^2$; la corrispondente variazione relativa di densità è $\Delta\rho/\rho = \Delta p/(\rho c^2) \approx \frac12 Ma^2$. Per $Ma < 0{,}3$ la densità varia meno del 5% e il fluido si può trattare come incomprimibile: per l'aria ciò significa velocità inferiori a circa $100\ \mathrm{m/s}$. Si distinguono quindi i regimi **subsonico** ($Ma < 1$), **transonico** ($Ma\approx1$), **supersonico** ($Ma > 1$) e **ipersonico** ($Ma \gtrsim 5$). Un corpo che si muove a velocità supersonica supera le perturbazioni da lui stesso generate, che si accumulano su una superficie conica, il **cono di Mach**, con semiapertura $\sin\mu = 1/Ma$: la discontinuità di pressione associata, detta **onda d'urto**, è percepita al suolo come il "bang" sonico degli aerei supersonici.
+
+### 11.8.2 Equazione dell'energia
+
+Il teorema di Bernoulli esprime la conservazione dell'energia meccanica per un fluido incomprimibile e non viscoso. Per un fluido comprimibile occorre includere l'**energia interna** e gli scambi di energia con l'esterno: la compressione e l'espansione del gas trasformano lavoro in energia interna e viceversa, e possono esserci scambi di calore e di lavoro tecnico (da parte di pompe, compressori, turbine). Si applica allora il primo principio della termodinamica a un **sistema aperto** in regime stazionario, cioè a un volume di controllo attraversato da un flusso di massa con portata $Q_m$.
+
+Si considerino una sezione di ingresso 1 e una sezione di uscita 2. Per ogni unità di massa che attraversa il sistema, l'energia trasportata comprende l'energia interna specifica $u$, l'energia cinetica $v^2/2$ e l'energia potenziale $gz$. Inoltre il fluido a monte spinge quello nel volume di controllo, compiendo il **lavoro di pulsione** $p_1/\rho_1$ per unità di massa all'ingresso, mentre il fluido nel volume compie lavoro $p_2/\rho_2$ su quello a valle. Indicando con $q$ il calore fornito al fluido e con $w$ il lavoro tecnico (o d'asse) ceduto dal fluido all'esterno, entrambi per unità di massa, il bilancio si scrive
+
+$$
+q - w = \left(u_2 + \frac{p_2}{\rho_2} + \frac{v_2^2}{2} + g z_2\right) - \left(u_1 + \frac{p_1}{\rho_1} + \frac{v_1^2}{2} + g z_1\right).
+$$
+
+La combinazione $h = u + p/\rho$ è l'**entalpia specifica**, e l'equazione assume la forma compatta
+
+$$
+q - w = \Delta h + \Delta\!\left(\frac{v^2}{2}\right) + g\,\Delta z,
+$$
+
+nota come **equazione generale dell'energia per i sistemi aperti** in regime stazionario. È lo strumento con cui si analizzano tutti i componenti delle macchine a fluido: in una turbina il fluido cede lavoro a scapito della propria entalpia; in un compressore riceve lavoro e aumenta di entalpia; in uno scambiatore di calore scambia calore senza lavoro; in un ugello converte entalpia in energia cinetica; in una valvola di laminazione, dove $q$, $w$ e le variazioni di energia cinetica sono trascurabili, l'entalpia si conserva.
+
+Due casi particolari mettono in luce il legame con quanto visto. Se il fluido è incomprimibile, non viscoso e non scambia calore né lavoro, l'energia interna resta costante, $\Delta u = 0$, e l'equazione si riduce esattamente al teorema di Bernoulli diviso per $\rho$. Se il fluido è viscoso, la dissipazione converte energia meccanica in energia interna: $\Delta u > 0$ anche senza scambi di calore, e questa è proprio la **perdita di carico** del linguaggio idraulico, che si manifesta come un lieve riscaldamento del fluido.
+
+Per un gas ideale in moto adiabatico ($q = 0$), senza lavoro tecnico e con quota costante, si ha $h + v^2/2 = \text{cost}$. Poiché $h = c_p T$ (per unità di massa), si definisce la **temperatura di ristagno** (o totale)
+
+$$
+T_0 = T + \frac{v^2}{2c_p} = T\left(1 + \frac{\gamma - 1}{2}Ma^2\right),
+$$
+
+cioè la temperatura che il gas raggiungerebbe se venisse arrestato adiabaticamente. Nel punto di ristagno sul muso di un aereo che vola a $Ma = 2$ in aria a $220\ \mathrm{K}$, la temperatura sale a $T_0 = 220\times(1 + 0{,}2\times4) \approx 396\ \mathrm{K}$: il riscaldamento aerodinamico è un problema progettuale serio per i velivoli supersonici e diventa critico per i veicoli spaziali al rientro nell'atmosfera. Se inoltre la trasformazione è reversibile (isoentropica), si ottiene la corrispondente pressione di ristagno, $p_0 = p\,(1 + \frac{\gamma-1}{2}Ma^2)^{\gamma/(\gamma - 1)}$; per $Ma \ll 1$, sviluppando in serie, si ritrova $p_0 \approx p + \frac12\rho v^2$, cioè il risultato di Bernoulli per il tubo di Pitot.
+
+Infine, la combinazione dell'equazione dell'energia con quella di continuità rivela un comportamento sorprendente dei flussi comprimibili in condotti a sezione variabile. In regime subsonico, come per i fluidi incomprimibili, un restringimento accelera il fluido; in regime supersonico avviene il contrario, e per accelerare un gas occorre allargare il condotto, perché la densità diminuisce più rapidamente di quanto aumenti la velocità. Per questo gli ugelli dei motori a razzo e delle turbine a vapore hanno una forma **convergente-divergente** (ugello di de Laval): nella parte convergente il gas accelera fino a $Ma = 1$ nella sezione minima (gola), e nella parte divergente continua ad accelerare in regime supersonico.
+
+### Esercizio d'esempio
+
+Un gas ideale biatomico ($\gamma = 1{,}40$, $c_p = 1005\ \mathrm{J/(kg\,K)}$, $M = 0{,}029\ \mathrm{kg/mol}$) scorre in un condotto orizzontale. In una sezione la temperatura è $T_1 = 300\ \mathrm{K}$ e la velocità $v_1 = 50\ \mathrm{m/s}$; dopo un ugello adiabatico, senza lavoro tecnico, la velocità è $v_2 = 300\ \mathrm{m/s}$. (a) Calcolare la temperatura $T_2$. (b) Calcolare la velocità del suono e il numero di Mach in uscita. (c) Calcolare la temperatura di ristagno.
+
+**Soluzione.** (a) Dall'equazione dell'energia con $q = w = 0$ e $\Delta z = 0$: $c_pT_1 + v_1^2/2 = c_pT_2 + v_2^2/2$, quindi
+
+$$
+T_2 = T_1 - \frac{v_2^2 - v_1^2}{2c_p} = 300 - \frac{90\,000 - 2500}{2\times1005} \approx 300 - 43{,}5 \approx 256\ \mathrm{K}.
+$$
+
+(b) La velocità del suono nella sezione di uscita è
+
+$$
+c_2 = \sqrt{\frac{\gamma R T_2}{M}} = \sqrt{\frac{1{,}40\times8{,}314\times256}{0{,}029}} \approx \sqrt{1{,}03\times10^5} \approx 321\ \mathrm{m/s},
+$$
+
+e il numero di Mach è $Ma_2 = 300/321 \approx 0{,}93$: il flusso è subsonico ma prossimo al regime transonico, e la comprimibilità non è affatto trascurabile. (c) La temperatura di ristagno si conserva lungo l'ugello: $T_0 = T_1 + v_1^2/(2c_p) = 300 + 2500/2010 \approx 301{,}2\ \mathrm{K}$, e lo stesso valore si ottiene dalla sezione 2: $256{,}5 + 90\,000/2010 \approx 301{,}3\ \mathrm{K}$.
+
+### Punti chiave
+
+- Il suono è un'onda longitudinale di pressione e densità; nei fluidi non esistono onde trasversali di volume.
+- La velocità del suono è $c = \sqrt{dp/d\rho} = \sqrt{K/\rho}$; nell'acqua circa $1480\ \mathrm{m/s}$.
+- In un gas ideale le compressioni sonore sono adiabatiche e $c = \sqrt{\gamma RT/M}$, circa $343\ \mathrm{m/s}$ nell'aria a 20 °C; dipende dalla temperatura e non dalla pressione.
+- Il numero di Mach $Ma = v/c$ stabilisce se un flusso è comprimibile: per $Ma < 0{,}3$ la densità varia meno del 5%.
+- L'equazione dell'energia per sistemi aperti stazionari è $q - w = \Delta h + \Delta(v^2/2) + g\Delta z$, con $h = u + p/\rho$ entalpia specifica.
+- Il teorema di Bernoulli è il caso particolare di fluido incomprimibile, non viscoso, senza scambi di calore e lavoro.
+- La temperatura di ristagno $T_0 = T(1 + \frac{\gamma-1}{2}Ma^2)$ quantifica il riscaldamento aerodinamico; in regime supersonico il gas accelera in condotti divergenti (ugello di de Laval).

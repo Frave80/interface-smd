@@ -177,3 +177,181 @@ Se si spostasse la carica $q$ fuori dal centro, la distribuzione interna cambier
 - Il conduttore cavo collegato a terra isola completamente le due regioni: schermo elettrostatico (gabbia di Faraday).
 - Una rete metallica a maglie fitte scherma lo spazio interno quasi come un involucro continuo.
 - Applicazioni: cavo coassiale, involucri di strumenti, generatore di Van de Graaff, protezione da fulmini.
+
+## 17.3 Capacità elettrica
+
+Abbiamo visto che un conduttore isolato in equilibrio ha un potenziale ben definito e che la sua carica si distribuisce sulla superficie in modo determinato dalla geometria. Sorge spontanea la domanda: quale relazione lega la carica posseduta da un conduttore al suo potenziale? La risposta conduce al concetto di **capacità elettrica**, una grandezza che dipende solo dalla geometria dei conduttori (e dal mezzo che li circonda) e che quantifica l'attitudine di un sistema ad accumulare carica a parità di potenziale. Il dispositivo progettato per sfruttare questa proprietà è il **condensatore**, uno dei componenti fondamentali dell'elettronica e dell'elettrotecnica.
+
+### 17.3.1 Capacità di un conduttore isolato
+
+Consideriamo un conduttore isolato, lontano da altri corpi, con carica $Q$ e potenziale $V$ (riferito all'infinito). Se raddoppiamo la carica, per il principio di sovrapposizione la nuova distribuzione superficiale è semplicemente il doppio della precedente: infatti la distribuzione $2\sigma$ produce un campo doppio, che resta nullo all'interno del conduttore e perpendicolare alla superficie, quindi soddisfa le condizioni di equilibrio, e per il teorema di unicità è quella corretta. Di conseguenza anche il potenziale raddoppia. La carica e il potenziale sono dunque proporzionali, e si definisce la **capacità** del conduttore isolato come il rapporto costante
+
+$$C = \frac{Q}{V}.$$
+
+La capacità dipende solo dalla forma e dalle dimensioni del conduttore (e, come vedremo nel capitolo sui dielettrici, dal mezzo in cui è immerso), non dalla carica né dal potenziale. Nel SI si misura in **farad** (F), con $1\ \text{F} = 1\ \text{C/V}$. Come vedremo, si tratta di un'unità molto grande: nelle applicazioni si usano tipicamente microfarad ($\mu$F), nanofarad (nF) e picofarad (pF). Dalla definizione segue anche che $\varepsilon_0$ si può esprimere in F/m, unità di misura più comune di quella vista nel capitolo precedente.
+
+Per una **sfera conduttrice** isolata di raggio $R$ il potenziale è $V = Q/(4\pi\varepsilon_0R)$, quindi
+
+$$C_{\text{sfera}} = 4\pi\varepsilon_0R.$$
+
+La capacità cresce linearmente con le dimensioni. Una sfera di raggio 1 m ha una capacità di circa 111 pF; per avere una capacità di 1 F servirebbe una sfera di raggio $9\times10^9$ m, oltre mille volte il raggio terrestre. La Terra stessa, considerata come sfera conduttrice isolata, ha una capacità di circa 710 $\mu$F. Questi numeri mostrano quanto sia inefficiente un conduttore isolato come "serbatoio" di carica, e spiegano perché per ottenere capacità elevate si ricorra ai condensatori.
+
+### 17.3.2 Condensatori
+
+Un **condensatore** è un sistema di due conduttori, detti **armature**, disposti in modo che fra di essi vi sia **induzione completa**: tutte le linee di campo che partono da un'armatura terminano sull'altra. In tal caso, se un'armatura porta carica $+Q$, l'altra porta necessariamente carica $-Q$ sulla superficie affacciata. La condizione è realizzata esattamente quando un'armatura racchiude completamente l'altra (condensatore sferico, cilindrico indefinito), e con ottima approssimazione quando le armature sono vicine rispetto alle loro dimensioni (condensatore piano). La **capacità del condensatore** è definita come
+
+$$C = \frac{Q}{\Delta V},$$
+
+dove $Q$ è il modulo della carica su ciascuna armatura e $\Delta V = V_+-V_-$ la differenza di potenziale fra le armature. Anche qui il rapporto dipende solo dalla geometria. Il vantaggio rispetto al conduttore isolato è enorme: la presenza dell'armatura opposta, vicina, riduce drasticamente la differenza di potenziale necessaria per accumulare una data carica, perché il campo resta confinato nello spazio fra le armature.
+
+**Condensatore piano.** Due lastre conduttrici parallele di area $S$ a distanza $d$ con $d\ll\sqrt{S}$. Trascurando gli effetti di bordo, la carica si distribuisce uniformemente sulle facce affacciate con densità $\pm\sigma = \pm Q/S$, e il campo fra le armature è uniforme, di modulo $E = \sigma/\varepsilon_0$ (sovrapposizione dei campi $\sigma/(2\varepsilon_0)$ delle due lastre, che si sommano fra le armature e si cancellano all'esterno; oppure teorema di Coulomb). La differenza di potenziale è $\Delta V = Ed = Qd/(\varepsilon_0S)$, e quindi
+
+$$C_{\text{piano}} = \frac{\varepsilon_0S}{d}.$$
+
+Con $S = 1$ m² e $d = 1$ mm si ottiene $C \approx 8{,}85$ nF: ancora piccola, nonostante l'area considerevole. Per aumentare la capacità si riduce la distanza, si aumenta l'area (avvolgendo lunghi nastri metallici sottili separati da un isolante) e si interpone un dielettrico con costante dielettrica elevata.
+
+**Condensatore sferico.** Due sfere conduttrici concentriche di raggi $R_1<R_2$. Fra le armature il campo è quello di una carica puntiforme $Q$, $E = Q/(4\pi\varepsilon_0r^2)$, e integrando da $R_1$ a $R_2$:
+
+$$\Delta V = \frac{Q}{4\pi\varepsilon_0}\left(\frac{1}{R_1}-\frac{1}{R_2}\right)\ \Rightarrow\ C_{\text{sferico}} = 4\pi\varepsilon_0\frac{R_1R_2}{R_2-R_1}.$$
+
+Per $R_2\to\infty$ si ritrova la capacità della sfera isolata; per $R_2-R_1 = d\ll R_1$ si ottiene $C\approx4\pi\varepsilon_0R_1^2/d = \varepsilon_0S/d$, la capacità del condensatore piano, come ci si aspetta localmente.
+
+**Condensatore cilindrico.** Due cilindri coassiali di raggi $R_1<R_2$ e lunghezza $L\gg R_2$ (è la geometria del cavo coassiale). Fra le armature $E = \lambda/(2\pi\varepsilon_0r)$ con $\lambda = Q/L$, da cui $\Delta V = \frac{\lambda}{2\pi\varepsilon_0}\ln(R_2/R_1)$ e
+
+$$C_{\text{cilindrico}} = \frac{2\pi\varepsilon_0L}{\ln(R_2/R_1)}.$$
+
+La capacità per unità di lunghezza di un cavo coassiale è un parametro fondamentale per la trasmissione di segnali: i cavi commerciali hanno valori tipici di 50–100 pF/m.
+
+### 17.3.3 Collegamenti di condensatori
+
+Nei circuiti i condensatori vengono spesso collegati fra loro; è utile sapere sostituire una combinazione con un unico **condensatore equivalente**.
+
+**Collegamento in parallelo.** Le armature corrispondenti sono collegate fra loro, quindi tutti i condensatori hanno la stessa differenza di potenziale $\Delta V$. La carica totale è la somma delle cariche: $Q = \sum_iC_i\Delta V$. La capacità equivalente è
+
+$$C_{\text{eq}} = \sum_iC_i.$$
+
+Il collegamento in parallelo equivale ad aumentare l'area delle armature: la capacità equivalente è maggiore della più grande delle capacità.
+
+**Collegamento in serie.** I condensatori sono collegati uno dopo l'altro, l'armatura negativa di ciascuno con la positiva del successivo. Le armature intermedie, collegate fra loro e isolate dal resto, formano conduttori inizialmente scarichi; per induzione ogni condensatore porta la stessa carica $Q$. Le differenze di potenziale si sommano: $\Delta V = \sum_iQ/C_i$. Quindi
+
+$$\frac{1}{C_{\text{eq}}} = \sum_i\frac{1}{C_i}.$$
+
+La capacità equivalente è minore della più piccola delle capacità. Il collegamento in serie è utile per ripartire una tensione elevata su più condensatori, ciascuno dei quali sopporta solo una parte di essa: la differenza di potenziale su ciascuno è inversamente proporzionale alla sua capacità.
+
+È importante ricordare che i condensatori reali hanno una **tensione massima di lavoro**: oltre un certo campo il dielettrico fra le armature perde le sue proprietà isolanti (scarica, perforazione). Nella scelta di un condensatore occorre considerare sia la capacità sia questa tensione nominale, che è legata alla rigidità dielettrica del materiale e alla distanza fra le armature.
+
+### 17.3.4 Sistemi di conduttori e coefficienti di capacità
+
+Nel caso più generale, quando sono presenti $N$ conduttori nello spazio, non c'è induzione completa e la carica di ciascun conduttore dipende dai potenziali di tutti. Per il principio di sovrapposizione e per il teorema di unicità, la relazione fra cariche e potenziali è lineare:
+
+$$Q_i = \sum_{j=1}^NC_{ij}V_j.$$
+
+I coefficienti $C_{ii}$ sono detti **coefficienti di capacità** e sono positivi; i coefficienti $C_{ij}$ con $i\ne j$ sono detti **coefficienti di induzione** e sono negativi o nulli (portando un conduttore a potenziale positivo con tutti gli altri a terra, sugli altri si induce carica negativa). Si dimostra inoltre che la matrice è simmetrica, $C_{ij} = C_{ji}$, proprietà che discende dalla conservazione dell'energia ed è nota come **teorema di reciprocità** di Green. I coefficienti dipendono solo dalla geometria dell'insieme dei conduttori.
+
+Questa descrizione è importante nell'elettronica moderna, dove si parla di **capacità parassite**: in un circuito integrato ogni pista conduttrice forma con le piste vicine e con il substrato un sistema di conduttori, e le capacità mutue fra di esse (dell'ordine dei femtofarad) limitano la velocità di commutazione e causano accoppiamenti indesiderati fra segnali (diafonia). Le stesse capacità mutue, d'altra parte, sono sfruttate negli **schermi tattili capacitivi**: il dito, conduttore collegato a terra attraverso il corpo, modifica i coefficienti di capacità fra gli elettrodi trasparenti dello schermo, e il circuito di controllo rileva la variazione per individuare il punto di contatto. Altri sensori capacitivi misurano spostamenti, livelli di liquidi, umidità e pressione sfruttando la dipendenza della capacità dalla geometria e dal materiale interposto.
+
+### Esercizio d'esempio
+
+Tre condensatori, $C_1 = 2{,}0\ \mu\text{F}$, $C_2 = 3{,}0\ \mu\text{F}$ e $C_3 = 6{,}0\ \mu\text{F}$, sono collegati così: $C_2$ e $C_3$ in serie fra loro, e questa coppia in parallelo con $C_1$. Al sistema è applicata una differenza di potenziale $\Delta V = 12$ V. Calcolare la capacità equivalente, la carica su ciascun condensatore e la tensione ai capi di $C_2$ e $C_3$. Infine, stimare l'area di un condensatore piano in aria con $d = 0{,}10$ mm che abbia la stessa capacità di $C_1$.
+
+**Soluzione.** Serie $C_2$–$C_3$: $1/C_{23} = 1/3{,}0+1/6{,}0 = 1/2{,}0$, quindi $C_{23} = 2{,}0\ \mu$F. Parallelo con $C_1$: $C_{\text{eq}} = 2{,}0+2{,}0 = 4{,}0\ \mu$F.
+
+Carica su $C_1$: $Q_1 = C_1\Delta V = 2{,}0\times10^{-6}\cdot12 = 24\ \mu$C. Carica sul ramo serie: $Q_{23} = C_{23}\Delta V = 24\ \mu$C, uguale su $C_2$ e su $C_3$. Carica totale fornita: $48\ \mu$C $= C_{\text{eq}}\Delta V$.
+
+Tensioni: $\Delta V_2 = Q_{23}/C_2 = 24/3{,}0 = 8{,}0$ V; $\Delta V_3 = 24/6{,}0 = 4{,}0$ V; somma 12 V, come deve essere.
+
+Area equivalente a $C_1$: $S = C_1d/\varepsilon_0 = 2{,}0\times10^{-6}\cdot1{,}0\times10^{-4}/8{,}85\times10^{-12} \approx 23\ \text{m}^2$. Il risultato spiega perché i condensatori reali usano dielettrici ad alta permittività e armature arrotolate.
+
+### Punti chiave
+
+- La capacità di un conduttore isolato è $C = Q/V$ e dipende solo dalla geometria; si misura in farad (F = C/V).
+- Sfera isolata: $C = 4\pi\varepsilon_0R$; il farad è un'unità molto grande.
+- Un condensatore è una coppia di conduttori in induzione completa: $C = Q/\Delta V$.
+- Piano: $C = \varepsilon_0S/d$; sferico: $C = 4\pi\varepsilon_0R_1R_2/(R_2-R_1)$; cilindrico: $C = 2\pi\varepsilon_0L/\ln(R_2/R_1)$.
+- In parallelo le capacità si sommano; in serie si sommano i reciproci.
+- In serie la carica è la stessa su tutti i condensatori; in parallelo è la stessa la tensione.
+- Per più conduttori $Q_i = \sum_jC_{ij}V_j$, con matrice simmetrica; da qui le capacità parassite e i sensori capacitivi.
+
+## 17.4 Energia elettrostatica
+
+Caricare un conduttore o un condensatore richiede lavoro: occorre portare cariche verso un corpo che, man mano che si carica, le respinge sempre più. Questo lavoro non va perduto, ma resta immagazzinato nel sistema sotto forma di **energia elettrostatica**, che può essere restituita in seguito, per esempio quando il condensatore si scarica attraverso un circuito. In questa sezione calcoliamo l'energia di un conduttore carico e di un condensatore, mostriamo che essa può essere attribuita al campo elettrico con densità $\frac12\varepsilon_0E^2$, e utilizziamo il principio dei lavori virtuali per ricavare le forze fra conduttori.
+
+### 17.4.1 Energia di un conduttore carico
+
+Consideriamo un conduttore isolato di capacità $C$ e calcoliamo il lavoro necessario per caricarlo dalla carica nulla alla carica finale $Q$, portando piccole quantità di carica $\mathrm{d}q$ dall'infinito (dove il potenziale è nullo). Quando il conduttore porta la carica $q$, il suo potenziale è $v = q/C$; il lavoro per portare la carica $\mathrm{d}q$ dall'infinito alla superficie del conduttore è $\mathrm{d}W = v\,\mathrm{d}q = (q/C)\,\mathrm{d}q$. Integrando:
+
+$$U = \int_0^Q\frac{q}{C}\,\mathrm{d}q = \frac{Q^2}{2C} = \frac12QV = \frac12CV^2.$$
+
+Le tre forme sono equivalenti grazie a $Q = CV$. Il fattore $\frac12$ ha un'origine chiara: la carica viene portata a un potenziale che cresce linearmente da zero a $V$, quindi il lavoro medio per unità di carica è $V/2$. Lo stesso risultato si ottiene dalla formula generale $U = \frac12\int\sigma V\,\mathrm{d}S$ della sezione 16.5, osservando che sul conduttore $V$ è costante e si può portare fuori dall'integrale: $U = \frac12V\int\sigma\,\mathrm{d}S = \frac12QV$.
+
+Per un sistema di più conduttori con cariche $Q_i$ e potenziali $V_i$ la generalizzazione è immediata:
+
+$$U = \frac12\sum_iQ_iV_i.$$
+
+Per una sfera di raggio $R$ si ha $U = Q^2/(8\pi\varepsilon_0R)$: a parità di carica, l'energia è tanto maggiore quanto più la sfera è piccola. Si noti la differenza con la sfera uniformemente carica in volume, per la quale il coefficiente è $3/5$ invece di $1/2$: nella sfera conduttrice tutta la carica è sulla superficie e non c'è campo interno, quindi manca il contributo dell'energia interna. Poiché un sistema fisico tende a portarsi nella configurazione di minima energia compatibile con i vincoli, si può verificare che la distribuzione superficiale delle cariche su un conduttore è proprio quella che, a carica totale fissata, rende minima l'energia elettrostatica (**teorema di Thomson**).
+
+### 17.4.2 Energia di un condensatore
+
+Per un condensatore si ragiona analogamente: caricarlo significa trasferire carica da un'armatura all'altra (è quanto fa un generatore collegato alle armature). Quando sulle armature ci sono le cariche $\pm q$, la differenza di potenziale è $q/C$, e il lavoro per trasferire un'ulteriore carica $\mathrm{d}q$ dall'armatura negativa a quella positiva è $(q/C)\,\mathrm{d}q$. Integrando:
+
+$$U = \frac{Q^2}{2C} = \frac12Q\,\Delta V = \frac12C\,\Delta V^2.$$
+
+Questa energia è quella che il condensatore restituisce quando viene scaricato, per esempio attraverso un resistore (dove si trasforma in calore per effetto Joule) o una lampada flash (dove si trasforma in luce). I condensatori sono usati come serbatoi di energia ogni volta che serve rilasciarla in tempi molto brevi con potenze elevate: flash fotografici, defibrillatori cardiaci, laser impulsati, sistemi di fusione a confinamento inerziale, sistemi di partenza dei motori. Negli ultimi decenni i **supercondensatori**, con capacità di migliaia di farad ottenute grazie a elettrodi porosi di enorme superficie specifica e a distanze fra le cariche di scala nanometrica, sono diventati complementari alle batterie nei veicoli elettrici e nei sistemi di recupero dell'energia di frenata.
+
+Un aspetto istruttivo riguarda il bilancio energetico del processo di carica. Se si carica un condensatore collegandolo direttamente a un generatore di tensione costante $\mathcal{E}$, il generatore compie un lavoro $W_{\text{gen}} = Q\mathcal{E} = C\mathcal{E}^2$, mentre l'energia immagazzinata è solo $\frac12C\mathcal{E}^2$. L'altra metà viene dissipata nei conduttori di collegamento (per effetto Joule e per irraggiamento), indipendentemente dal valore della resistenza del circuito. Il risultato, che verrà verificato nello studio dei circuiti RC, mostra che il processo di carica a tensione costante è intrinsecamente irreversibile.
+
+### 17.4.3 Densità di energia del campo
+
+Per il condensatore piano possiamo riscrivere l'energia in termini del campo fra le armature. Con $C = \varepsilon_0S/d$ e $\Delta V = Ed$:
+
+$$U = \frac12\frac{\varepsilon_0S}{d}E^2d^2 = \frac12\varepsilon_0E^2\cdot(Sd).$$
+
+Il prodotto $Sd$ è proprio il volume della regione fra le armature, l'unica in cui il campo è diverso da zero. L'energia risulta quindi distribuita uniformemente in quel volume con **densità di energia**
+
+$$u = \frac{U}{Sd} = \frac12\varepsilon_0E^2,$$
+
+in perfetto accordo con il risultato generale ricavato nella sezione 16.7. Si può verificare che lo stesso vale per il condensatore sferico e cilindrico, dove il campo non è uniforme: integrando $\frac12\varepsilon_0E^2$ sul volume compreso fra le armature si ottiene esattamente $Q^2/(2C)$. Per esempio, per il condensatore cilindrico
+
+$$U = \int_{R_1}^{R_2}\frac{\varepsilon_0}{2}\left(\frac{\lambda}{2\pi\varepsilon_0r}\right)^2 2\pi rL\,\mathrm{d}r = \frac{\lambda^2L}{4\pi\varepsilon_0}\ln\frac{R_2}{R_1} = \frac{Q^2}{2C}.$$
+
+L'interpretazione dell'energia come proprietà del campo, distribuita nello spazio in cui il campo è presente, è dunque coerente in ogni caso. Essa suggerisce anche una regola pratica di progettazione: per immagazzinare molta energia in poco volume occorrono campi intensi, limitati però dalla rigidità dielettrica del mezzo interposto. In aria il limite è di circa 40 J/m³, come già osservato; con dielettrici solidi o con film polimerici sottili si raggiungono campi di centinaia di MV/m e densità di energia di diversi MJ/m³.
+
+### 17.4.4 Forze fra conduttori e metodo energetico
+
+La conoscenza dell'energia elettrostatica permette di calcolare le forze fra conduttori con il **principio dei lavori virtuali**. Consideriamo un sistema di conduttori e immaginiamo uno spostamento virtuale $\mathrm{d}x$ di una parte di esso. Occorre distinguere due situazioni.
+
+**Sistema isolato (cariche costanti).** Se i conduttori sono isolati, le cariche non cambiano durante lo spostamento. Il lavoro compiuto dalla forza elettrica è uguale alla diminuzione dell'energia elettrostatica:
+
+$$F_x = -\left(\frac{\partial U}{\partial x}\right)_Q.$$
+
+**Potenziali costanti.** Se i conduttori sono collegati a generatori che ne mantengono fissi i potenziali, durante lo spostamento i generatori forniscono carica e compiono lavoro. Si dimostra che il lavoro dei generatori è il doppio della variazione di energia del sistema, e la forza risulta
+
+$$F_x = +\left(\frac{\partial U}{\partial x}\right)_V.$$
+
+Naturalmente la forza in una data configurazione è unica: le due formule devono dare lo stesso risultato, ed è così. Applichiamole al condensatore piano, calcolando la forza fra le armature. A carica costante, $U = Q^2/(2C) = Q^2x/(2\varepsilon_0S)$, dove $x$ è la distanza fra le armature; quindi
+
+$$F_x = -\frac{Q^2}{2\varepsilon_0S}.$$
+
+Il segno meno indica che la forza tende a ridurre $x$: le armature si attraggono. A potenziale costante, $U = \frac12C\Delta V^2 = \varepsilon_0S\Delta V^2/(2x)$, e $F_x = +\partial U/\partial x = -\varepsilon_0S\Delta V^2/(2x^2)$; sostituendo $\Delta V = Qx/(\varepsilon_0S)$ si ritrova lo stesso valore. Il modulo della forza si può scrivere come $F = \frac12\varepsilon_0E^2S$, cioè pressione elettrostatica per area, in accordo con la sottosezione 17.1.3.
+
+Questo metodo è alla base degli **elettrometri assoluti** (bilance in cui la forza fra le armature di un condensatore viene equilibrata da pesi noti, permettendo di misurare una differenza di potenziale in termini di grandezze meccaniche), degli altoparlanti elettrostatici e degli attuatori dei microsistemi. Lo stesso approccio permette di spiegare perché un dielettrico viene risucchiato all'interno di un condensatore carico, fenomeno che riprenderemo nel capitolo sui dielettrici.
+
+### Esercizio d'esempio
+
+Un condensatore piano in aria ha armature di area $S = 200$ cm² e distanza $d = 2{,}0$ mm, ed è collegato a un generatore di $\Delta V = 1000$ V. (a) Calcolare capacità, carica, energia e densità di energia. (b) Calcolare la forza fra le armature. (c) Il condensatore viene staccato dal generatore e le armature vengono allontanate fino a $d' = 4{,}0$ mm: calcolare la nuova differenza di potenziale, la nuova energia e il lavoro compiuto dall'operatore.
+
+**Soluzione.** (a) $C = \varepsilon_0S/d = 8{,}85\times10^{-12}\cdot0{,}020/0{,}0020 = 8{,}85\times10^{-11}$ F $= 88{,}5$ pF. $Q = C\Delta V = 8{,}85\times10^{-8}$ C. $U = \frac12C\Delta V^2 = \frac12\cdot8{,}85\times10^{-11}\cdot10^6 \approx 4{,}4\times10^{-5}$ J. Campo: $E = \Delta V/d = 5{,}0\times10^5$ V/m; densità $u = \frac12\varepsilon_0E^2 = \frac12\cdot8{,}85\times10^{-12}\cdot2{,}5\times10^{11} \approx 1{,}1$ J/m³. Verifica: $u\cdot Sd = 1{,}1\cdot4{,}0\times10^{-5} \approx 4{,}4\times10^{-5}$ J.
+
+(b) $F = \frac12\varepsilon_0E^2S = u\,S = 1{,}1\cdot0{,}020 \approx 2{,}2\times10^{-2}$ N, attrattiva.
+
+(c) Staccato il generatore, $Q$ resta costante e $C' = C/2 = 44{,}3$ pF. Quindi $\Delta V' = Q/C' = 2000$ V e $U' = Q^2/(2C') = 2U \approx 8{,}8\times10^{-5}$ J. Il campo resta $E = \sigma/\varepsilon_0$, invariato, e la forza resta costante durante lo spostamento: il lavoro dell'operatore è $W = F\,(d'-d) = 2{,}2\times10^{-2}\cdot2{,}0\times10^{-3} \approx 4{,}4\times10^{-5}$ J, esattamente pari all'aumento di energia $U'-U$, come prevede la conservazione dell'energia.
+
+### Punti chiave
+
+- L'energia di un conduttore carico è $U = \frac{Q^2}{2C} = \frac12QV = \frac12CV^2$; per più conduttori $U = \frac12\sum Q_iV_i$.
+- L'energia di un condensatore ha la stessa forma, con $\Delta V$ al posto di $V$.
+- Caricando un condensatore a tensione costante, metà del lavoro del generatore viene dissipata.
+- L'energia è distribuita nel campo con densità $u = \frac12\varepsilon_0E^2$; vale per ogni geometria.
+- Forza a carica costante: $F_x = -(\partial U/\partial x)_Q$; a potenziale costante: $F_x = +(\partial U/\partial x)_V$.
+- Le armature di un condensatore piano si attraggono con forza $F = \frac12\varepsilon_0E^2S$, coerente con la pressione elettrostatica.
+- La rigidità dielettrica del mezzo limita la densità di energia immagazzinabile.

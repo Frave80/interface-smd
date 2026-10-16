@@ -167,3 +167,119 @@ lo stesso valore che si avrebbe attorno al filo di alimentazione alla stessa dis
 - In regime dinamico $\vec{E}=-\nabla V-\partial\vec{A}/\partial t$.
 - Nei mezzi lineari si usano $\vec{D}=\varepsilon\vec{E}$ e $\vec{H}=\vec{B}/\mu$ con le sole sorgenti libere.
 
+## 24.3 Onde elettromagnetiche
+
+### 24.3.1 Equazione d'onda
+
+Consideriamo le equazioni di Maxwell in una regione di spazio vuoto, priva di cariche e di correnti ($\rho=0$, $\vec{J}=0$):
+
+$$\nabla\cdot\vec{E}=0,\qquad\nabla\cdot\vec{B}=0,\qquad\nabla\times\vec{E}=-\frac{\partial\vec{B}}{\partial t},\qquad\nabla\times\vec{B}=\mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}.$$
+
+Le due equazioni di circuitazione mostrano che, anche in assenza di sorgenti, i campi possono sostenersi a vicenda: un campo elettrico variabile genera un campo magnetico variabile, che a sua volta genera un campo elettrico variabile, e così via. Per capire che tipo di soluzioni ammettono queste equazioni, prendiamo il rotore della terza equazione:
+
+$$\nabla\times(\nabla\times\vec{E}) = -\frac{\partial}{\partial t}(\nabla\times\vec{B}) = -\mu_0\varepsilon_0\frac{\partial^2\vec{E}}{\partial t^2}.$$
+
+Usando l'identità vettoriale $\nabla\times(\nabla\times\vec{E})=\nabla(\nabla\cdot\vec{E})-\nabla^2\vec{E}$ e il fatto che nel vuoto $\nabla\cdot\vec{E}=0$, si ottiene
+
+$$\nabla^2\vec{E} = \mu_0\varepsilon_0\frac{\partial^2\vec{E}}{\partial t^2},$$
+
+e con lo stesso procedimento, partendo dal rotore della quarta equazione,
+
+$$\nabla^2\vec{B} = \mu_0\varepsilon_0\frac{\partial^2\vec{B}}{\partial t^2}.$$
+
+Ciascuna componente cartesiana dei campi soddisfa dunque l'**equazione delle onde** (o di d'Alembert) $\nabla^2 f = \frac{1}{v^2}\frac{\partial^2 f}{\partial t^2}$, la stessa che descrive le onde su una corda tesa o le onde sonore, con velocità di propagazione $v=1/\sqrt{\mu_0\varepsilon_0}$. Il risultato è straordinario: le equazioni di Maxwell prevedono l'esistenza di **onde elettromagnetiche**, perturbazioni dei campi che si propagano nello spazio vuoto senza bisogno di alcun mezzo materiale e trasportano energia e quantità di moto lontano dalle sorgenti che le hanno generate.
+
+Il caso più semplice è quello di un'onda che si propaga lungo l'asse $x$ e i cui campi dipendono solo da $x$ e $t$. L'equazione unidimensionale $\partial^2f/\partial x^2 = (1/v^2)\partial^2f/\partial t^2$ ha come soluzione generale $f(x,t)=f_1(x-vt)+f_2(x+vt)$: la sovrapposizione di una forma d'onda arbitraria che trasla rigidamente verso le $x$ crescenti e di una che trasla verso le $x$ decrescenti. Le superfici su cui i campi hanno lo stesso valore (fronti d'onda) sono piani perpendicolari a $x$: si parla di **onda piana**. Particolarmente importante è l'**onda piana armonica**, in cui la dipendenza è sinusoidale:
+
+$$\vec{E}(x,t) = \vec{E}_0\cos(kx-\omega t),$$
+
+con **numero d'onda** $k=2\pi/\lambda$, **pulsazione** $\omega=2\pi f$ e relazione di dispersione $\omega = vk$, cioè $\lambda f = v$. Per il teorema di Fourier qualunque onda può essere scritta come sovrapposizione di onde armoniche, e poiché le equazioni sono lineari basta studiare queste ultime.
+
+Applicando alle onde piane le equazioni di Maxwell (non solo l'equazione d'onda, che ne è una conseguenza) si ricavano le proprietà strutturali delle onde elettromagnetiche. Dalla legge di Gauss $\nabla\cdot\vec{E}=\partial E_x/\partial x=0$ segue che la componente longitudinale $E_x$ non può oscillare: il campo elettrico è perpendicolare alla direzione di propagazione. Lo stesso vale per $\vec{B}$. Le onde elettromagnetiche sono quindi **onde trasversali**. Inoltre, dalla legge di Faraday, per un campo $\vec{E}=E_0\cos(kx-\omega t)\,\hat{y}$ si ottiene $\partial B_z/\partial t = -\partial E_y/\partial x$, ossia
+
+$$\vec{B} = \frac{E_0}{v}\cos(kx-\omega t)\,\hat{z}.$$
+
+Il campo magnetico oscilla **in fase** con il campo elettrico, è perpendicolare sia a $\vec{E}$ sia alla direzione di propagazione $\hat{u}$, e ha modulo $B=E/v$. In forma compatta: $\vec{B}=\frac{1}{v}\hat{u}\times\vec{E}$, e la terna $(\vec{E},\vec{B},\hat{u})$ è destrorsa. La direzione lungo cui oscilla il campo elettrico definisce la **polarizzazione** dell'onda: se resta fissa si parla di polarizzazione lineare; la sovrapposizione di due onde polarizzate linearmente in direzioni ortogonali e sfasate di un quarto di periodo dà la polarizzazione circolare.
+
+### 24.3.2 Velocità della luce
+
+Calcoliamo numericamente la velocità prevista per le onde elettromagnetiche nel vuoto. Con $\varepsilon_0=8{,}854\times10^{-12}\,\mathrm{F/m}$ e $\mu_0=4\pi\times10^{-7}\,\mathrm{H/m}$:
+
+$$c = \frac{1}{\sqrt{\mu_0\varepsilon_0}} = \frac{1}{\sqrt{4\pi\times10^{-7}\cdot8{,}854\times10^{-12}}}\simeq 2{,}998\times10^{8}\,\mathrm{m/s}.$$
+
+Quando Maxwell eseguì questo calcolo, nel 1864, usando i valori delle costanti ricavati da misure puramente elettriche e magnetiche (come il rapporto tra unità elettrostatiche ed elettromagnetiche di carica, misurato da Weber e Kohlrausch), trovò un valore molto vicino alla velocità della luce misurata da Fizeau e Foucault con metodi ottici. La coincidenza non poteva essere casuale, e Maxwell concluse che **la luce è un'onda elettromagnetica**. Fu un'unificazione di portata enorme: l'ottica divenne un capitolo dell'elettromagnetismo. La conferma sperimentale diretta arrivò nel 1887-1888 con Heinrich Hertz, che produsse onde elettromagnetiche con un circuito oscillante a scintilla, ne misurò la lunghezza d'onda tramite onde stazionarie e ne verificò riflessione, rifrazione e polarizzazione, determinando una velocità di propagazione compatibile con quella della luce.
+
+Oggi la velocità della luce nel vuoto ha un valore **esatto** per definizione, $c=299\,792\,458\,\mathrm{m/s}$, e il metro è definito come la distanza percorsa dalla luce nel vuoto in $1/299\,792\,458$ di secondo. Con la revisione del SI del 2019, la relazione $\mu_0\varepsilon_0=1/c^2$ è esatta, ma $\mu_0$ ed $\varepsilon_0$ separatamente sono grandezze misurate.
+
+In un **mezzo materiale** lineare, isotropo e non conduttore, le equazioni di Maxwell conservano la stessa struttura con $\varepsilon=\varepsilon_r\varepsilon_0$ e $\mu=\mu_r\mu_0$ al posto delle costanti del vuoto, e la velocità di propagazione diventa
+
+$$v = \frac{1}{\sqrt{\varepsilon\mu}} = \frac{c}{\sqrt{\varepsilon_r\mu_r}} = \frac{c}{n},$$
+
+dove $n=\sqrt{\varepsilon_r\mu_r}$ è l'**indice di rifrazione**. Per i materiali trasparenti non magnetici $\mu_r\simeq1$, e quindi $n\simeq\sqrt{\varepsilon_r}$. Questa relazione, nota come relazione di Maxwell, va usata con cautela: la costante dielettrica dipende dalla frequenza (dispersione), e il valore statico non coincide con quello alle frequenze ottiche. Per l'acqua, ad esempio, $\varepsilon_r\simeq80$ in regime statico, che darebbe $n\simeq9$, mentre alle frequenze della luce visibile $n\simeq1{,}33$; la differenza è dovuta al fatto che le molecole polari d'acqua non riescono a riorientarsi abbastanza in fretta da seguire un campo che oscilla a $10^{14}\,\mathrm{Hz}$. La dipendenza dell'indice di rifrazione dalla frequenza è all'origine della dispersione della luce bianca da parte di un prisma.
+
+È importante sottolineare il legame tra questo risultato e la relatività. La velocità $c$ emerge dalle equazioni di Maxwell come combinazione di costanti fondamentali, senza alcun riferimento al moto della sorgente o dell'osservatore. Se le equazioni valgono in tutti i sistemi inerziali, come richiede il principio di relatività, allora la luce deve avere la stessa velocità per tutti: è esattamente il secondo postulato di Einstein, che appare così come una conseguenza naturale dell'elettromagnetismo.
+
+### 24.3.3 Vettore di Poynting
+
+Le onde elettromagnetiche trasportano energia: è l'energia che il Sole ci invia attraverso lo spazio vuoto, quella che scalda il cibo in un forno a microonde o che un'antenna ricevente raccoglie. Ricordiamo che nel vuoto la **densità di energia** del campo elettromagnetico è
+
+$$u = \frac{1}{2}\varepsilon_0E^2+\frac{1}{2\mu_0}B^2.$$
+
+Per un'onda piana nel vuoto $B=E/c$, e quindi $\frac{B^2}{2\mu_0}=\frac{E^2}{2\mu_0c^2}=\frac{\varepsilon_0E^2}{2}$: in un'onda elettromagnetica **l'energia è equamente ripartita** tra campo elettrico e campo magnetico, e la densità totale è $u=\varepsilon_0E^2$.
+
+Consideriamo un cilindro di sezione $A$ con l'asse lungo la direzione di propagazione. Nel tempo $\mathrm{d}t$ attraversa la sezione l'energia contenuta in un tratto di cilindro di lunghezza $c\,\mathrm{d}t$, cioè $u\,A\,c\,\mathrm{d}t$. L'energia che fluisce per unità di tempo e di superficie è dunque $uc=\varepsilon_0cE^2 = EB/\mu_0$. Questo suggerisce di definire il **vettore di Poynting**
+
+$$\vec{S} = \frac{1}{\mu_0}\vec{E}\times\vec{B},$$
+
+che ha la direzione di propagazione dell'onda e modulo pari alla potenza per unità di superficie trasportata dall'onda, misurata in $\mathrm{W/m^2}$. In realtà il significato di $\vec{S}$ è molto più generale: dalle equazioni di Maxwell si dimostra il **teorema di Poynting**, che esprime la conservazione dell'energia elettromagnetica in forma locale,
+
+$$\frac{\partial u}{\partial t}+\nabla\cdot\vec{S} = -\vec{J}\cdot\vec{E}:$$
+
+la diminuzione dell'energia del campo in un volume è uguale all'energia che esce attraverso la superficie (flusso di $\vec{S}$) più il lavoro compiuto dal campo sulle cariche (che nei conduttori si traduce in effetto Joule). Un esempio istruttivo è un filo resistivo percorso da corrente: il campo elettrico è lungo il filo, il campo magnetico è azimutale, e il vettore di Poynting punta radialmente **verso l'interno** del filo. L'energia dissipata per effetto Joule non arriva "lungo il filo" con gli elettroni, ma entra dalla superficie laterale, trasportata dal campo elettromagnetico che circonda il conduttore. Il calcolo del flusso di $\vec{S}$ sulla superficie dà esattamente $RI^2$.
+
+Per un'onda armonica il vettore di Poynting oscilla rapidamente, a frequenze tipicamente non seguibili da alcuno strumento; la grandezza misurabile è il suo valore medio nel tempo, l'**intensità** dell'onda:
+
+$$I = \langle S\rangle = \frac{1}{2}\varepsilon_0cE_0^2 = \frac{E_0B_0}{2\mu_0} = \frac{cB_0^2}{2\mu_0},$$
+
+dove il fattore $1/2$ deriva dalla media di $\cos^2$ su un periodo. Per una sorgente puntiforme che emette isotropicamente la potenza $P$, l'energia si distribuisce su sfere di area $4\pi r^2$, e l'intensità decresce come $I=P/(4\pi r^2)$: l'ampiezza dei campi decresce quindi come $1/r$, molto più lentamente dei campi statici, ed è per questo che la radiazione può portare segnali a distanze enormi.
+
+Le onde elettromagnetiche trasportano anche **quantità di moto**. Un'onda che trasporta energia $U$ possiede quantità di moto $p=U/c$, e quando viene assorbita da una superficie esercita su di essa una **pressione di radiazione** pari a $I/c$ (che diventa $2I/c$ per una superficie perfettamente riflettente). Al livello della Terra la pressione della luce solare è di pochi micropascal, ma è sufficiente a spiegare la forma delle code delle comete, a deviare le traiettorie delle sonde spaziali, e a spingere le vele solari; in laboratorio è alla base delle **pinzette ottiche**, che intrappolano e manipolano cellule e singole molecole.
+
+### 24.3.4 Spettro elettromagnetico
+
+Le equazioni di Maxwell non impongono alcuna restrizione alla frequenza delle onde: qualunque frequenza è possibile, e tutte si propagano nel vuoto con la stessa velocità $c$. L'insieme delle onde elettromagnetiche, ordinate per frequenza o lunghezza d'onda ($\lambda=c/f$), costituisce lo **spettro elettromagnetico**. Le diverse regioni hanno nomi diversi per ragioni storiche e perché sono prodotte e rivelate con tecniche diverse, ma la loro natura fisica è la stessa. Procedendo da frequenze basse a frequenze alte:
+
+- **Onde radio** ($f\lesssim 1\,\mathrm{GHz}$, $\lambda\gtrsim 30\,\mathrm{cm}$): prodotte da correnti oscillanti in antenne, usate per radiodiffusione, televisione, comunicazioni. Le onde lunghe si riflettono sulla ionosfera e possono superare l'orizzonte.
+- **Microonde** ($1\,\mathrm{GHz}$–$300\,\mathrm{GHz}$, $\lambda$ da $30\,\mathrm{cm}$ a $1\,\mathrm{mm}$): radar, telefonia mobile, Wi-Fi (circa $2{,}4$ e $5\,\mathrm{GHz}$), forni a microonde ($2{,}45\,\mathrm{GHz}$), comunicazioni satellitari. La **radiazione cosmica di fondo**, residuo del Big Bang, ha il massimo in questa regione.
+- **Infrarosso** ($\lambda$ da $1\,\mathrm{mm}$ a $780\,\mathrm{nm}$): emesso da tutti i corpi a temperatura ambiente per agitazione termica; un corpo umano emette principalmente attorno a $10\,\mu\mathrm{m}$. Usato nelle termocamere, nei telecomandi e nelle fibre ottiche ($1{,}55\,\mu\mathrm{m}$).
+- **Luce visibile** ($\lambda$ da circa $780\,\mathrm{nm}$, rosso, a $380\,\mathrm{nm}$, violetto): la ristretta banda a cui è sensibile l'occhio umano, coincidente con il massimo dell'emissione solare e con la finestra di trasparenza dell'atmosfera e dell'acqua.
+- **Ultravioletto** ($\lambda$ da $380\,\mathrm{nm}$ a circa $10\,\mathrm{nm}$): responsabile dell'abbronzatura e di danni al DNA; in gran parte assorbito dallo strato di ozono. Usato per sterilizzazione e litografia.
+- **Raggi X** ($\lambda$ da $10\,\mathrm{nm}$ a circa $0{,}01\,\mathrm{nm}$): prodotti dalla decelerazione di elettroni veloci o da transizioni degli elettroni interni degli atomi; penetrano i tessuti molli e sono usati in radiologia e in cristallografia, poiché le lunghezze d'onda sono confrontabili con le distanze interatomiche.
+- **Raggi gamma** ($\lambda\lesssim0{,}01\,\mathrm{nm}$): emessi nelle transizioni nucleari, nell'annichilazione materia-antimateria e nei fenomeni astrofisici più violenti.
+
+I confini tra le regioni non sono netti e in parte si sovrappongono. Alle frequenze più alte assume importanza la natura quantistica della radiazione: l'energia è scambiata in pacchetti, i **fotoni**, di energia $E=hf$, con $h=6{,}626\times10^{-34}\,\mathrm{J\,s}$ costante di Planck. Un fotone di luce visibile ha un'energia di circa $2$–$3\,\mathrm{eV}$, comparabile con le energie di legame chimico, ed è per questo che la luce visibile innesca la fotosintesi e la visione; i fotoni ultravioletti, X e gamma hanno energie sufficienti a ionizzare atomi e molecole (radiazioni **ionizzanti**), mentre le onde radio e le microonde, con fotoni di energia milioni di volte più piccola, agiscono sulla materia soprattutto per riscaldamento.
+
+Per quanto riguarda la produzione, una conseguenza fondamentale delle equazioni di Maxwell è che **le cariche accelerate irradiano**: una carica in moto uniforme porta con sé il proprio campo senza emettere energia, mentre una carica accelerata emette onde elettromagnetiche con una potenza proporzionale al quadrato dell'accelerazione (formula di Larmor). Le correnti alternate in un'antenna, gli elettroni che curvano negli anelli di sincrotrone, gli elettroni frenati in un tubo a raggi X sono tutti esempi di questo principio. A livello atomico e nucleare, invece, l'emissione è governata dalle transizioni tra livelli energetici quantizzati, che producono le righe spettrali caratteristiche di ciascun elemento.
+
+### Esercizio d'esempio
+
+**Problema.** L'intensità della radiazione solare al di fuori dell'atmosfera terrestre (costante solare) è $I = 1{,}36\times10^{3}\,\mathrm{W/m^2}$. Trattando la radiazione come un'onda piana armonica, calcolare le ampiezze $E_0$ e $B_0$ dei campi, la densità media di energia e la pressione di radiazione su un pannello perfettamente assorbente. Calcolare infine la potenza totale emessa dal Sole, sapendo che la distanza Terra-Sole è $r=1{,}50\times10^{11}\,\mathrm{m}$.
+
+**Soluzione.** Dall'espressione dell'intensità $I=\frac12\varepsilon_0cE_0^2$:
+$$E_0 = \sqrt{\frac{2I}{\varepsilon_0c}} = \sqrt{\frac{2\cdot1{,}36\times10^{3}}{8{,}85\times10^{-12}\cdot3{,}00\times10^{8}}}\simeq\sqrt{1{,}02\times10^{6}}\simeq1{,}01\times10^{3}\,\mathrm{V/m}.$$
+Il campo magnetico ha ampiezza
+$$B_0 = \frac{E_0}{c} = \frac{1{,}01\times10^{3}}{3{,}00\times10^{8}}\simeq3{,}4\times10^{-6}\,\mathrm{T},$$
+circa un decimo del campo magnetico terrestre. La densità media di energia è
+$$\langle u\rangle = \frac{I}{c} = \frac{1{,}36\times10^{3}}{3{,}00\times10^{8}}\simeq4{,}5\times10^{-6}\,\mathrm{J/m^3},$$
+e la pressione di radiazione su superficie assorbente ha lo stesso valore numerico, $p=I/c\simeq4{,}5\times10^{-6}\,\mathrm{Pa}$. La potenza totale emessa dal Sole, supponendo emissione isotropa, è
+$$P = 4\pi r^2 I = 4\pi\cdot(1{,}50\times10^{11})^2\cdot1{,}36\times10^{3}\simeq3{,}8\times10^{26}\,\mathrm{W}.$$
+
+### Punti chiave
+
+- Nel vuoto le equazioni di Maxwell implicano che $\vec{E}$ e $\vec{B}$ soddisfano l'equazione delle onde con velocità $c=1/\sqrt{\mu_0\varepsilon_0}\simeq3{,}00\times10^{8}\,\mathrm{m/s}$.
+- Le onde elettromagnetiche sono trasversali: $\vec{E}$, $\vec{B}$ e la direzione di propagazione formano una terna destrorsa, con $B=E/c$ e campi in fase.
+- La luce è un'onda elettromagnetica (Maxwell, confermato da Hertz); in un mezzo la velocità è $c/n$ con $n=\sqrt{\varepsilon_r\mu_r}$.
+- Il vettore di Poynting $\vec{S}=\vec{E}\times\vec{B}/\mu_0$ rappresenta il flusso di energia; l'intensità di un'onda armonica è $I=\frac12\varepsilon_0cE_0^2$.
+- In un'onda l'energia è ripartita equamente tra campo elettrico e magnetico; l'onda trasporta quantità di moto ed esercita una pressione $I/c$ (assorbimento) o $2I/c$ (riflessione).
+- Lo spettro elettromagnetico va dalle onde radio ai raggi gamma; tutte le onde viaggiano a $c$ nel vuoto e differiscono per frequenza ed energia dei fotoni $E=hf$.
+- Le onde elettromagnetiche sono prodotte da cariche accelerate e da transizioni tra livelli atomici e nucleari.

@@ -558,11 +558,11 @@ L'espressione dell'energia in termini di campo ha anche un utile risvolto pratic
 
 ### Esercizio d'esempio
 
-In una regione di spazio il potenziale elettrostatico è $V(x,y,z) = V_0\,(x^2-y^2)/a^2 + \alpha z^2$, con $V_0 = 100$ V, $a = 0{,}10$ m. (a) Determinare $\alpha$ affinché la regione sia priva di carica. (b) Con $\alpha = 0$, calcolare la densità di carica. (c) Nel caso (a), calcolare il campo e la densità di energia nel punto $P = (0{,}05;\ 0;\ 0)$ m.
+In una regione di spazio il potenziale elettrostatico è $V(x,y,z) = V_0\,(x^2-y^2)/a^2 + \alpha z^2$, con $V_0 = 100$ V, $a = 0{,}10$ m. (a) Determinare $\alpha$ affinché la regione sia priva di carica. (b) Calcolare la densità di carica se invece $\alpha = 1000$ V/m². (c) Nel caso (a), calcolare il campo e la densità di energia nel punto $P = (0{,}05;\ 0;\ 0)$ m.
 
 **Soluzione.** (a) Laplaciano: $\nabla^2V = 2V_0/a^2-2V_0/a^2+2\alpha = 2\alpha$. Per avere $\rho = 0$ serve $\nabla^2V = 0$, quindi $\alpha = 0$.
 
-(b) Con $\alpha = 0$ si ha già $\nabla^2V = 0$, quindi $\rho = -\varepsilon_0\nabla^2V = 0$: il potenziale descrive una regione vuota di carica (è il potenziale di un quadrupolo elettrico, usato nelle trappole ioniche). Se invece, per esempio, $\alpha = 1000$ V/m², si avrebbe $\rho = -\varepsilon_0\cdot2000 \approx -1{,}8\times10^{-8}$ C/m³.
+(b) Dall'equazione di Poisson $\rho = -\varepsilon_0\nabla^2V = -2\varepsilon_0\alpha = -8{,}85\times10^{-12}\cdot2000 \approx -1{,}8\times10^{-8}$ C/m³, uniforme. Si noti che nel caso (a) il potenziale $V_0(x^2-y^2)/a^2$ descrive una regione vuota di carica: è il potenziale di quadrupolo usato nelle trappole ioniche e nei filtri di massa.
 
 (c) $\vec{E} = -\nabla V = -\frac{2V_0}{a^2}(x\,\hat{x}-y\,\hat{y})$. In $P$: $E_x = -\frac{2\cdot100}{0{,}01}\cdot0{,}05 = -1000$ V/m, $E_y = E_z = 0$. Densità di energia:
 
